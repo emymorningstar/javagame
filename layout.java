@@ -26,7 +26,9 @@ public class layout {
 		System.out.println("click");
 		Scanner sc=new Scanner(t.getText());
 		if(sc.hasNext()) {
-		System.out.println(sc.next());}
+		String cmd=sc.next();
+		System.out.println(cmd);
+		t.setText("");}
 		}
 		});
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
