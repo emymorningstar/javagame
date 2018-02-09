@@ -54,7 +54,7 @@ public class layout {
 		panel.setLayout(null);
 		canvas = new Canvas();
 		canvas.setBounds(0, 0, WIDTH, HEIGHT);
-		//canvas.setIgnoreRepaint(true);
+		canvas.setIgnoreRepaint(true);
 		frame.pack();
 		frame.setSize(WIDTH + 6, HEIGHT + 28);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +65,8 @@ public class layout {
 		canvas.createBufferStrategy(2);
 		bufferStrategy = canvas.getBufferStrategy();
 		canvas.requestFocus();
-		canvas.setBackground(Color.blue);
+		Color c=new Color(66, 241, 120);
+		canvas.setBackground(c);
 		
 	}
 	
@@ -78,7 +79,20 @@ public class layout {
 	}
 	
 	void render(Graphics2D g) {
-		g.drawString("HELLO WORLD" , 610, 50);
+	renderString("LINK STARTO!");
 		
+	}
+	void renderString(String string) {
+		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
+		g.setColor(Color.DARK_GRAY);
+		g.fillRect(0, HEIGHT/2-100, WIDTH, 200);
+		g.setColor(Color.WHITE);
+		g.drawString( string, 20, 175);
+		g.dispose();
+	}
+	void clearGui(String string) {
+		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
+		g.clearRect(0, 0, WIDTH, HEIGHT);
+		g.dispose();
 	}
 }
