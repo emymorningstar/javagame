@@ -10,6 +10,18 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -45,7 +57,7 @@ public class layout {
 			System.out.println("click");
 			Scanner sc=new Scanner(t.getText());
 			if(sc.hasNext()) {
-			String cmd=sc.next();
+			String cmd=sc.nextLine();
 			processInput.doInput(cmd);
 			t.setText("");}
 			}
