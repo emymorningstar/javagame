@@ -1,4 +1,4 @@
-package adventurePath;
+
 
 import javax.swing.JFrame;
 
@@ -9,18 +9,12 @@ public class main {
 		
 		
 		
-		String s = "Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad"
-				+ "Before you is a path, leading through the dangers of this world. At the end, Dr. Big Bad"
-				+ "awaits. The path leads north. ";
-		String display = s;
-		String vd = "You find yourself in a village filled with happyness. You have been resting here for "
-				+ "a couple of days, regaining your strenght to fight Dr. Big Bad. There is a path that leads north.";
-				
-		Room village = new Room();
-		Room current = village;
-		l.render();
+		
+		room village = new room();
+		room current = village;
+		
 		while (true) {
-			l.renderString(display);
+			l.render();
 			try {
 				Thread.sleep(10);
 
@@ -28,6 +22,7 @@ public class main {
 				e.printStackTrace();
 
 			}
+		l.clearGui(null);
 		}
 	}
 }
