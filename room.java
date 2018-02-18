@@ -1,8 +1,8 @@
 
-package adventurePath;
+
 import java.util.Vector;
 
-public class Room 
+public class room 
 {
 	// Member variables
 	private String roomTitle;
@@ -10,7 +10,7 @@ public class Room
 	private Vector door;
 
 	// Blank constructor
-	public Room()
+	public room()
 	{
 		// Blank title + description
 		roomTitle = new String ();
@@ -19,7 +19,7 @@ public class Room
 	}
 
 	// Partial constructor
-	public Room( String title )
+	public room( String title )
 	{
 		// Assign title
 		roomTitle = title;
@@ -32,7 +32,7 @@ public class Room
 	}
 
 	// Full constructor
-	public Room( String title, String description )
+	public room( String title, String description )
 	{
 		roomTitle = title;
 		roomDescription = description;
@@ -40,12 +40,12 @@ public class Room
 		door = new Vector();
 	}
 
-	public void addDoor ( Door exit )
+	public void addDoor ( door exit )
 	{
 		door.addElement (exit);
 	}
 
-	public void removeExit ( Door exit )
+	public void removeExit ( door exit )
 	{
 		if (door.contains (exit))
 		{

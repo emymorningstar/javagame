@@ -1,4 +1,4 @@
-package adventurePath;
+
 
 package adventurePath;
 
@@ -11,6 +11,7 @@ public class main {
 		
 		
 		
+
 		String s = "Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad"
 				+ "Before you is a path, leading through the dangers of this world. At the end, Dr. Big Bad"
 				+ "awaits. The path leads north. ";
@@ -45,9 +46,9 @@ public class main {
 		farm.addDoor(door4);
 		
 		Room current = village;
-		l.render();
+		
 		while (true) {
-			l.renderString(display);
+			l.render();
 			try {
 				Thread.sleep(10);
 
@@ -55,6 +56,7 @@ public class main {
 				e.printStackTrace();
 
 			}
+		l.clearGui(null);
 		}
 	}
 }
