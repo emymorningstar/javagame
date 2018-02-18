@@ -1,3 +1,5 @@
+package adventurePath;
+
 import java.util.Random;
 public class Door 
 {
@@ -51,7 +53,7 @@ public class Door
 		"O"		
 	};
 
-	private Location leadsTo = null;
+	private Room leadsTo = null;
 	private int direction;
 
 	// full direction names
@@ -68,9 +70,9 @@ public class Door
 		shortDirectionName = shortDirName[UNDEFINED];
 	}
 
-	public Door( int direction, Location to1, Location to2, Location to3 )
+	public Door( int d, Room to1, Room to2, Room to3 )
 	{
-		direction = direction;
+		direction = d;
 
 		// Assign direction names
 		if (direction <= dirName.length )
@@ -117,12 +119,12 @@ public class Door
 		return shortDirectionName;
 	}
 
-	public void setLeadsTo ( Location to )
+	public void setLeadsTo ( Room to )
 	{
 		leadsTo = to;
 	}
 
-	public Location getLeadsTo (  )
+	public Room getLeadsTo (  )
 	{
 		return leadsTo;
 	}
