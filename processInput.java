@@ -5,6 +5,7 @@ public class processInput {
 	static void doInput(String s) {
 		
 		s.toLowerCase();
+
 		if (s.contains("north") && instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake" || (instances.currentRoom.getTitle() == "Mermaids Lake" && instances.currentRoom.getCreature().getHealth() <= 0)) {
 				if (instances.currentRoom.getTitle() != "Work" || (instances.currentRoom.getTitle() == "Work" && instances.currentRoom.getCreature().getHealth() <= 0)) {
@@ -14,6 +15,7 @@ public class processInput {
 					}
 				}
 			}
+
 		}
 		
 		/*
@@ -49,12 +51,12 @@ public class processInput {
 		if (instances.currentRoom.getTitle() == "Fairy Forest" && s.contains("talk fairy")){
 			ArrayList<String> tFairy = new ArrayList<String>();
 			tFairy.add("The fairy says she lost her helmet. If you can find it, she will give it to you!");
-			tFairy.add("She’s nice like that.");
+			tFairy.add("Sheï¿½s nice like that.");
 			instances.changeDisplay(tFairy);
 		}
 		if (instances.currentRoom.getTitle() == "Fairy Forest" && s.contains("look pond")){
 			ArrayList<String> lpond = new ArrayList<String>();
-			lpond.add("The fairy says she lost her helmet. If you can find it, she will give it to you! She’s nice like that.");
+			lpond.add("The fairy says she lost her helmet. If you can find it, she will give it to you! Sheï¿½s nice like that.");
 			instances.changeDisplay(lpond);
 		}
 		

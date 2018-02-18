@@ -25,6 +25,7 @@ public class instances {
 	
 	public static void setCurrentRoom(Room r) {
 		currentRoom=r;
+		instances.changeDisplay(instances.getCurrentRoom().getDescription());
 	}
 			
 }

@@ -101,7 +101,7 @@ public class main {
 		
 		while (true) {
 			l.render();
-			instances.changeDisplay(instances.getCurrentRoom().getDescription());
+		
 			try {
 				Thread.sleep(10);
 
