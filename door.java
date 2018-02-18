@@ -1,7 +1,7 @@
-package adventurePath;
+
 
 import java.util.Random;
-public class Door 
+public class door 
 {
 	// assigns directions to numbers
 	public static final int UNDEFINED = 0;
@@ -53,7 +53,7 @@ public class Door
 		"O"		
 	};
 
-	private Room leadsTo = null;
+	private room leadsTo = null;
 	private int direction;
 
 	// full direction names
@@ -62,15 +62,15 @@ public class Door
 	// short direction names
 	private String shortDirectionName;
 
-	public Door()
+	public door()
 	{
-		direction = Door.UNDEFINED;
+		direction = door.UNDEFINED;
 		leadsTo = null;
 		directionName = dirName[UNDEFINED];
 		shortDirectionName = shortDirName[UNDEFINED];
 	}
 
-	public Door( int d, Room to1, Room to2, Room to3 )
+	public door( int d, room to1, room to2, room to3 )
 	{
 		direction = d;
 
@@ -119,12 +119,12 @@ public class Door
 		return shortDirectionName;
 	}
 
-	public void setLeadsTo ( Room to )
+	public void setLeadsTo ( room to )
 	{
 		leadsTo = to;
 	}
 
-	public Room getLeadsTo (  )
+	public room getLeadsTo (  )
 	{
 		return leadsTo;
 	}

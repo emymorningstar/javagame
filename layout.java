@@ -3,6 +3,7 @@ import java.awt.Container;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -28,7 +29,7 @@ public class layout {
 	public static final int WIDTH = 700;
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
-
+	instances s= new instances();
 	public layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
@@ -45,7 +46,7 @@ public class layout {
 			Scanner sc=new Scanner(t.getText());
 			if(sc.hasNext()) {
 			String cmd=sc.next();
-			System.out.println(cmd);
+			processInput.doInput(cmd);
 			t.setText("");}
 			}
 			});
@@ -79,16 +80,20 @@ public class layout {
 	}
 	
 	void render(Graphics2D g) {
-	renderString("LINK STARTO!");
+	renderString(instances.getDisplay());
 		
 	}
-	void renderString(String string) {
+	void renderString(ArrayList<String> s) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, HEIGHT/2-100, WIDTH, 200);
 		g.setColor(Color.WHITE);
-		g.drawString( string, 20, 175);
-		g.dispose();
+		for (int i = 0; i < s.size(); i++) {
+			//System.out.println(s.get(i));
+			g.drawString( s.get(i), 20, 175+i*20);
+		}
+			
+		
 	}
 	void clearGui(String string) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();

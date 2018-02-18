@@ -1,4 +1,3 @@
-package adventurePath;
 
 import javax.swing.JFrame;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class main {
 				
 		ArrayList<String> ffd = new ArrayList<String>();
 		ffd.add("You are now in the fairy forest. All around you trees are buzzing with the sound of");
-		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.”");
+		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.ï¿½");
 		
 		ArrayList<String> secC = new ArrayList<String>();
 		secC.add("You find yourself navigating a strange cave. The walls glow a luminescent green,");
@@ -57,13 +56,13 @@ public class main {
 		lichD.add("");
 		
 		ArrayList<String> farmD = new ArrayList<String>();
-		farmD.add("You find yourself on a little farm. It’s quite and piece full. An old man sits on ");
+		farmD.add("You find yourself on a little farm. Itï¿½s quite and piece full. An old man sits on ");
 		farmD.add("the porch and asks you to join him for dinner. The path continues north.");
 		farmD.add("");
 		
 		ArrayList<String> bigD = new ArrayList<String>();
 		bigD.add("You have made it to the end of your journey. Dr. Big Bad stands in front of you. He");
-		bigD.add("starts monologuing, but you can’t really hear him through his helmet.");
+		bigD.add("starts monologuing, but you canï¿½t really hear him through his helmet.");
 		bigD.add("");
 		
 		Room village = new Room("village", vd);
@@ -91,11 +90,12 @@ public class main {
 		dragonCave.setDoor(door4);
 		lichHouse.setDoor(door4);
 		farm.setDoor(door4);
+
+		instances.setCurrentRoom(village);
 		
-		Room current = village;
-		l.render();
 		while (true) {
-			l.renderString(display);
+			l.render();
+			instances.changeDisplay(instances.getCurrentRoom().getDescription());
 			try {
 				Thread.sleep(10);
 
@@ -103,6 +103,7 @@ public class main {
 				e.printStackTrace();
 
 			}
+		l.clearGui(null);
 		}
 	}
 }

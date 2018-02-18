@@ -1,8 +1,10 @@
 
+
 package adventurePath;
 import java.util.ArrayList;
 
-public class Room 
+
+public class room 
 {
 	// Member variables
 	private String roomTitle;
@@ -10,7 +12,7 @@ public class Room
 	private Door door;
 
 	// Blank constructor
-	public Room()
+	public room()
 	{
 		// Blank title + description
 		roomTitle = new String ();
@@ -19,7 +21,7 @@ public class Room
 	}
 
 	// Partial constructor
-	public Room( String title )
+	public room( String title )
 	{
 		// Assign title
 		roomTitle = title;
@@ -33,6 +35,7 @@ public class Room
 
 	// Full constructor
 	public Room( String title, ArrayList<String> description )
+
 	{
 		roomTitle = title;
 		roomDescription = description;
@@ -41,9 +44,11 @@ public class Room
 	}
 
 	public void setDoor ( Door exit )
+
 	{
 		door= exit;
 	}
+
 
 	public Door getDoors ()
 	{
