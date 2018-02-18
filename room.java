@@ -1,21 +1,21 @@
 
 package adventurePath;
-import java.util.Vector;
+import java.util.ArrayList;
 
 public class Room 
 {
 	// Member variables
 	private String roomTitle;
-	private String roomDescription;
-	private Vector door;
+	private ArrayList<String> roomDescription;
+	private Door door;
 
 	// Blank constructor
 	public Room()
 	{
 		// Blank title + description
 		roomTitle = new String ();
-		roomDescription = new String();
-		door = new Vector();
+		roomDescription = new ArrayList<String>();
+		door = new Door();
 	}
 
 	// Partial constructor
@@ -25,37 +25,29 @@ public class Room
 		roomTitle = title;
 
 		// Blank description
-		roomDescription = new String();
+		roomDescription = new ArrayList<String>();
 
 		// Blank exits
-		door = new Vector();
+		door = new Door();
 	}
 
 	// Full constructor
-	public Room( String title, String description )
+	public Room( String title, ArrayList<String> description )
 	{
 		roomTitle = title;
 		roomDescription = description;
 
-		door = new Vector();
+		door = new Door();
 	}
 
-	public void addDoor ( Door exit )
+	public void setDoor ( Door exit )
 	{
-		door.addElement (exit);
+		door= exit;
 	}
 
-	public void removeExit ( Door exit )
+	public Door getDoors ()
 	{
-		if (door.contains (exit))
-		{
-			door.removeElement (exit);
-		}
-	}
-
-	public Vector getExits ()
-	{
-		return (Vector) door.clone();
+		return door;
 	}
 	
 	public String getTitle()
@@ -68,12 +60,12 @@ public class Room
 		roomTitle = title;
 	}
 
-	public String getDescription()
+	public ArrayList<String> getDescription()
 	{
 		return roomDescription;
 	}
 
-	public void setDescription( String description )
+	public void setDescription( ArrayList<String> description )
 	{
 		roomDescription = description;
 	}
