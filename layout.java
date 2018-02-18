@@ -8,6 +8,7 @@ import java.util.Scanner;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferStrategy;
 import java.awt.Color;
@@ -98,11 +99,12 @@ public class layout {
 	void renderString(ArrayList<String> s) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
-		g.fillRect(0, HEIGHT/2-100, WIDTH, 200);
+		g.fillRect(0, HEIGHT/2-100, WIDTH, 400);
+		g.setFont(new Font("Monospaced", Font.PLAIN, 14)); 
 		g.setColor(Color.WHITE);
 		for (int i = 0; i < s.size(); i++) {
 			//System.out.println(s.get(i));
-			g.drawString( s.get(i), 20, 175+i*20);
+			g.drawString( s.get(i), 20, 200+i*20);
 		}
 			
 		

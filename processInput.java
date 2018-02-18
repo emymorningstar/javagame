@@ -1,10 +1,13 @@
+
 import java.util.ArrayList;
+
 
 public class processInput {
 
 	static void doInput(String s) {
 		
 		s.toLowerCase();
+
 
 		if (s.contains("north") && instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake" || (instances.currentRoom.getTitle() == "Mermaids Lake" && instances.currentRoom.getCreature().getHealth() <= 0)) {
