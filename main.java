@@ -1,48 +1,96 @@
 package adventurePath;
 
-package adventurePath;
-
 import javax.swing.JFrame;
+import java.util.ArrayList;
 
 public class main {
 
 	public static void main(String[] args) {
 		layout l= new layout();
 		
+		ArrayList<String> start = new ArrayList<String>();
+		start.add("Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr.");
+		start.add("Big Bad Before you is a path, leading through the dangers of this world. At the");
+		start.add("end, Dr. Big Bad awaits. The path leads north. ");
 		
-		
-		String s = "Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad"
-				+ "Before you is a path, leading through the dangers of this world. At the end, Dr. Big Bad"
-				+ "awaits. The path leads north. ";
-		String display = s;
-		String vd = "You find yourself in a village filled with happyness. You have been resting here for "
-				+ "a couple of days, regaining your strenght to fight Dr. Big Bad. There is a path that leads north.";
+		ArrayList<String> vd = new ArrayList<String>();
+		vd.add("You find yourself in a village filled with happiness. You have been resting ");
+		vd.add("here for a couple of days, regaining your strength to fight Dr. Big Bad. There is a ");
+		vd.add("path that leads north.");
 				
+		ArrayList<String> ffd = new ArrayList<String>();
+		ffd.add("You are now in the fairy forest. All around you trees are buzzing with the sound of");
+		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.”");
+		
+		ArrayList<String> secC = new ArrayList<String>();
+		secC.add("You find yourself navigating a strange cave. The walls glow a luminescent green,");
+		secC.add("allowing you to see. In the middle of the cave is a pond.");
+		
+		ArrayList<String> wd = new ArrayList<String>();
+		wd.add("You are now in a concrete building filled with cubicles. The doors behind you and too");
+		wd.add("the north are locked. You can see a cubicle with your name on it. In the back you");
+		wd.add("can see an office.");
+		
+		ArrayList<String> merd = new ArrayList<String>();
+		merd.add("You are now in front of a gorgeous lake. You hear singing coming from it, luring you ");
+		merd.add("in. Beautiful women with fish tails for legs swim around. In the middle of the lake, ");
+		merd.add("you can see a tiny island with something shiny on it.");
+		
+		ArrayList<String> ghd = new ArrayList<String>();
+		ghd.add("You enter a big mansion on top of the hill. All around you are strange whispers and ");
+		ghd.add("moans. On the north side of the room is a locked door. In the middle of the room is ");
+		ghd.add("an old set of armor");
+		
+		ArrayList<String> medD = new ArrayList<String>();
+		medD.add("You are in a grassy meadow. Butterflies flutter around you. In the middle of the ");
+		medD.add("meadow, on a hill, there is an old, yet beautiful suit of armor.");
+		medD.add("");
+		
+		ArrayList<String> dragD = new ArrayList<String>();
+		dragD.add("You enter a cave. To the left and to the right are piles of useless junk. In front ");
+		dragD.add("of you there is a giant dragon. He is fast asleep, but in his claws you see a sword. ");
+		dragD.add("Behind him to the north the path continues.");
+		
+		ArrayList<String> lichD = new ArrayList<String>();
+		lichD.add("You are now in a strange dungeon. You wonder how you got in here. In the middle of");
+		lichD.add("the dungeon you see a skeleton holding a chest. To the north the path continues.");
+		lichD.add("");
+		
+		ArrayList<String> farmD = new ArrayList<String>();
+		farmD.add("You find yourself on a little farm. It’s quite and piece full. An old man sits on ");
+		farmD.add("the porch and asks you to join him for dinner. The path continues north.");
+		farmD.add("");
+		
+		ArrayList<String> bigD = new ArrayList<String>();
+		bigD.add("You have made it to the end of your journey. Dr. Big Bad stands in front of you. He");
+		bigD.add("starts monologuing, but you can’t really hear him through his helmet.");
+		bigD.add("");
+		
 		Room village = new Room("village", vd);
-		Room fairyForest = new Room("Fairy Forest","so pretty");
-		Room secCave = new Room("Secret Cave", "spooky damp cave");
-		Room work = new Room("Work","It's very boring.");
-		Room merLake = new Room("Mermaids Lake", "Wet lake with cute hunnies");
-		Room ghostHouse = new Room("Ghost House", "Spooky ghosts want to eat you");
-		Room meadow = new Room("Meadow of Frollicking", "a peacefull meadow");
-		Room dragonCave = new Room("The Dragon's Cave", "A giant lizard is here.");
-		Room lichHouse = new Room("The lair of the Lich", "A spooky skeleton watches you. And he has magic.");
-		Room farm = new Room ("The farm of eternal despair", "It's smelly and the cows look mean");
-		Room badLair = new Room("Dr. Big Bad's Lair", "Dr. Big Bad sits in his chair, judging you");
+		Room fairyForest = new Room("Fairy Forest",ffd);
+		Room secCave = new Room("Secret Cave", secC);
+		Room work = new Room("Work",wd);
+		Room merLake = new Room("Mermaids Lake", merd);
+		Room ghostHouse = new Room("Ghost House", ghd);
+		Room meadow = new Room("Meadow of Frollicking", medD);
+		Room dragonCave = new Room("The Dragon's Cave", dragD);
+		Room lichHouse = new Room("The lair of the Lich", lichD);
+		Room farm = new Room ("The farm of eternal despair", farmD);
+		Room badLair = new Room("Dr. Big Bad's Lair", bigD);
 		Door door1 = new Door(1, fairyForest, secCave, work);
 		Door door2 = new Door(1, merLake, ghostHouse, meadow);
 		Door door3 = new Door(1, dragonCave, lichHouse, farm);
 		Door door4 = new Door(1, badLair, badLair, badLair);
-		village.addDoor(door1);
-		fairyForest.addDoor(door2);
-		secCave.addDoor(door2);
-		work.addDoor(door2);
-		merLake.addDoor(door3);
-		ghostHouse.addDoor(door3);
-		meadow.addDoor(door3);
-		dragonCave.addDoor(door4);
-		lichHouse.addDoor(door4);
-		farm.addDoor(door4);
+		village.setDoor(door1);
+		fairyForest.setDoor(door2);
+		secCave.setDoor(door2);
+		work.setDoor(door2);
+		merLake.setDoor(door3);
+		ghostHouse.setDoor(door3);
+		meadow.setDoor(door3);
+		dragonCave.setDoor(door4);
+		lichHouse.setDoor(door4);
+		farm.setDoor(door4);
 		
 		Room current = village;
 		l.render();
@@ -58,4 +106,3 @@ public class main {
 		}
 	}
 }
-	
