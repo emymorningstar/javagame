@@ -1,6 +1,4 @@
 
-package adventurePath;
-
 import java.util.Random;
 public class Door 
 {	

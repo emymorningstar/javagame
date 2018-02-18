@@ -1,4 +1,3 @@
-
 import javax.swing.JFrame;
 import java.util.ArrayList;
 
@@ -6,7 +5,14 @@ public class main {
 
 	public static void main(String[] args) {
 		layout l= new layout();
+		creature Bob = new creature("Bob",10,10, 2, 2);
+		creature cMonster = new creature("Lake Monster", 10, 10, 5, 5);
+		creature ghost = new creature("Ghost", 15, 15, 3, 4);
+		creature dragon = new creature("Dragon", 15, 15, 15, 3);
+		creature lich = new creature("Lich", 6,6,10,8);
+		creature chickMan = new creature("Chicken Man", 10, 10, 10, 10);
 		
+
 		ArrayList<String> start = new ArrayList<String>();
 		start.add("Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr.");
 		start.add("Big Bad Before you is a path, leading through the dangers of this world. At the");
@@ -19,7 +25,7 @@ public class main {
 				
 		ArrayList<String> ffd = new ArrayList<String>();
 		ffd.add("You are now in the fairy forest. All around you trees are buzzing with the sound of");
-		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.ï¿½");
+		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.”");
 		
 		ArrayList<String> secC = new ArrayList<String>();
 		secC.add("You find yourself navigating a strange cave. The walls glow a luminescent green,");
@@ -56,30 +62,30 @@ public class main {
 		lichD.add("");
 		
 		ArrayList<String> farmD = new ArrayList<String>();
-		farmD.add("You find yourself on a little farm. Itï¿½s quite and piece full. An old man sits on ");
+		farmD.add("You find yourself on a little farm. It’s quite and piece full. An old man sits on ");
 		farmD.add("the porch and asks you to join him for dinner. The path continues north.");
 		farmD.add("");
 		
 		ArrayList<String> bigD = new ArrayList<String>();
 		bigD.add("You have made it to the end of your journey. Dr. Big Bad stands in front of you. He");
-		bigD.add("starts monologuing, but you canï¿½t really hear him through his helmet.");
+		bigD.add("starts monologuing, but you can’t really hear him through his helmet.");
 		bigD.add("");
 		
 		Room village = new Room("village", vd);
 		Room fairyForest = new Room("Fairy Forest",ffd);
 		Room secCave = new Room("Secret Cave", secC);
-		Room work = new Room("Work",wd);
-		Room merLake = new Room("Mermaids Lake", merd);
-		Room ghostHouse = new Room("Ghost House", ghd);
+		Room work = new Room("Work",wd, Bob);
+		Room merLake = new Room("Mermaids Lake", merd, cMonster);
+		Room ghostHouse = new Room("Ghost House", ghd, ghost);
 		Room meadow = new Room("Meadow of Frollicking", medD);
-		Room dragonCave = new Room("The Dragon's Cave", dragD);
-		Room lichHouse = new Room("The lair of the Lich", lichD);
-		Room farm = new Room ("The farm of eternal despair", farmD);
+		Room dragonCave = new Room("The Dragon's Cave", dragD, dragon);
+		Room lichHouse = new Room("The lair of the Lich", lichD, lich);
+		Room farm = new Room ("The farm of eternal despair", farmD, chickMan);
 		Room badLair = new Room("Dr. Big Bad's Lair", bigD);
-		Door door1 = new Door(1, fairyForest, secCave, work);
-		Door door2 = new Door(1, merLake, ghostHouse, meadow);
-		Door door3 = new Door(1, dragonCave, lichHouse, farm);
-		Door door4 = new Door(1, badLair, badLair, badLair);
+		Door door1 = new Door(fairyForest, secCave, work);
+		Door door2 = new Door(merLake, ghostHouse, meadow);
+		Door door3 = new Door(dragonCave, lichHouse, farm);
+		Door door4 = new Door(badLair, badLair, badLair);
 		village.setDoor(door1);
 		fairyForest.setDoor(door2);
 		secCave.setDoor(door2);
@@ -106,4 +112,4 @@ public class main {
 		l.clearGui(null);
 		}
 	}
-}
+}		
