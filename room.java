@@ -1,54 +1,51 @@
-
-
-package adventurePath;
 import java.util.ArrayList;
 
-
-public class room 
+public class Room 
 {
 	// Member variables
 	private String roomTitle;
 	private ArrayList<String> roomDescription;
 	private Door door;
+	private creature character;
 
 	// Blank constructor
-	public room()
+	public Room()
 	{
 		// Blank title + description
 		roomTitle = new String ();
 		roomDescription = new ArrayList<String>();
 		door = new Door();
+		character= null;
 	}
 
 	// Partial constructor
-	public room( String title )
+	public Room( String title, ArrayList<String> d )
 	{
 		// Assign title
 		roomTitle = title;
 
 		// Blank description
-		roomDescription = new ArrayList<String>();
+		roomDescription = d;
 
 		// Blank exits
 		door = new Door();
+		
+		character = null;
 	}
 
 	// Full constructor
-	public Room( String title, ArrayList<String> description )
-
+	public Room( String title, ArrayList<String> description, creature c )
 	{
 		roomTitle = title;
 		roomDescription = description;
-
 		door = new Door();
+		character = c;
 	}
 
 	public void setDoor ( Door exit )
-
 	{
 		door= exit;
 	}
-
 
 	public Door getDoors ()
 	{
