@@ -1,0 +1,54 @@
+package adventurePath;
+
+public class creature {
+	private int health;
+	private int maxHealth;
+	private int armor;
+	private int attack;
+	
+	public creature() {
+		health = 10;
+		maxHealth =10;
+		armor = 10;
+		attack = 0;
+	}
+	
+	public creature(int h, int maxH, int arm, int att){
+		health = h;
+		maxHealth = maxH;
+		armor = arm;
+		attack = att;
+	}
+	
+	public int getHealth(){
+		return health;
+	}
+	
+	public void setHealth(int h){
+		health = h;
+	}
+	
+	public int getMaxHealth(){
+		return maxHealth;
+	}
+	
+	public void setMaxHealth(int h){
+		maxHealth = h;
+	}
+	
+	public int getArmor(){
+		return armor;
+	}
+	
+	public void setArmor(int arm){
+		armor = arm;
+	}
+	
+	public int getAttack(){
+		return attack;
+	}
+	
+	public void setAttack(int att){
+		attack = att;
+	}
+}
