@@ -5,7 +5,7 @@ public class processInput {
 	static void doInput(String s) {
 		s.toLowerCase();
 		if(s.contains("door")) {
-			Door d = instances.getCurrentRoom().getExits().;
+			Door d = instances.getCurrentRoom().getDoors();
 			instances.setCurrentRoom(d.getLeadsTo());
 		}
 	}
