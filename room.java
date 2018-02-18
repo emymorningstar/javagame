@@ -71,4 +71,13 @@ public class Room
 	{
 		roomDescription = description;
 	}
+	
+	public creature getCreature(){
+		return character;
+	}
+	
+	public void setCreature(creature c){
+		character = c;
+	}
+	
 }
