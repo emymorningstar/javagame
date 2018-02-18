@@ -29,7 +29,7 @@ public class layout {
 	public static final int WIDTH = 700;
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
-	strings s= new strings();
+	instances s= new instances();
 	public layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
@@ -46,8 +46,7 @@ public class layout {
 			Scanner sc=new Scanner(t.getText());
 			if(sc.hasNext()) {
 			String cmd=sc.next();
-			
-			System.out.println(cmd);
+			processInput.doInput(cmd);
 			t.setText("");}
 			}
 			});
@@ -81,7 +80,7 @@ public class layout {
 	}
 	
 	void render(Graphics2D g) {
-	renderString(strings.getDisplay());
+	renderString(instances.getDisplay());
 		
 	}
 	void renderString(ArrayList<String> s) {
