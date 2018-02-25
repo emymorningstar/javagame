@@ -1,16 +1,15 @@
-package adventurePath;
 
-import java.util.ArrayList;
+
 
 public class processInput {
-
+//write mermaid lake stuff
 	static void doInput(String s) {
 		
 		s.toLowerCase();
 		if (s.contains("north") && instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake" || (instances.currentRoom.getTitle() == "Mermaids Lake" && instances.currentRoom.getCreature().getHealth() <= 0)) {
 				if (instances.currentRoom.getTitle() != "Work" || (instances.currentRoom.getTitle() == "Work" && instances.currentRoom.getCreature().getHealth() <= 0)) {
-					if (instances.currentRoom.getTitle() != "Ghost House" || (instances.currentRoom.getTitle() == "GhostHouse" && instances.currentRoom.getCreature().getHealth() <= 0)) {
+					if (instances.currentRoom.getTitle() != "Ghost House" || (instances.currentRoom.getTitle() == "Ghost House" && instances.currentRoom.getCreature().getHealth() <= 0)) {
 						Door d = instances.getCurrentRoom().getDoors();
 						instances.setCurrentRoom(d.getLeadsTo());
 					}
@@ -37,6 +36,9 @@ public class processInput {
 		else if(instances.currentRoom.getTitle() == "Work" && (s.contains("talk bob") || s.contains("talk to bob"))){
 			ArrayList<String> tBob = new ArrayList<String>();
 			tBob.add("Get back to work, work Monkey!");
+
+			instances.setfight(true);
+
 			instances.changeDisplay(tBob);
 		}
 			
@@ -52,12 +54,12 @@ public class processInput {
 			ArrayList<String> gfHelm = new ArrayList<String>();
 			gfHelm.add("You got the fairy helmet! Your defense goes up by 3!");
 			instances.changeDisplay(gfHelm);
-			instances.getPlayer().addArmor(3);
+			instances.getPlayer().setArmor(3+instances.getPlayer().getArmor());
 		}
 		else if (instances.currentRoom.getTitle() == "Fairy Forest" && s.contains("talk fairy")){
 			ArrayList<String> tFairy = new ArrayList<String>();
 			tFairy.add("The fairy says she lost her helmet. If you can find it, she will give it to you!");
-			tFairy.add("She’s nice like that.");
+			tFairy.add("Sheâ€™s nice like that.");
 			instances.changeDisplay(tFairy);
 		}
 		else if (instances.currentRoom.getTitle() == "Fairy Forest" && s.contains("look pond")){
@@ -74,8 +76,8 @@ public class processInput {
 			gsHelm.add("You got the helmet of +2 beating. Your defense goes up by 1, but your attack ");
 			gsHelm.add("goes up by 2!");
 			instances.changeDisplay(gsHelm);
-			instances.getPlayer().addArmor(1);
-			instances.getPlayer().addAttack(2);
+			instances.getPlayer().setArmor(1+instances.getPlayer().getArmor());
+			instances.getPlayer().setAttack(2+instances.getPlayer().getAttack());
 		}
 		
 		/*
@@ -83,17 +85,20 @@ public class processInput {
 		 */
 		else if (instances.currentRoom.getTitle() == "Ghost House" && s.contains("look armor")){
 			ArrayList<String> lArm = new ArrayList<String>();
-			lArm.add("As you look at the armor, something crawls out of it. It’s a ghost! The specter");
+			lArm.add("As you look at the armor, something crawls out of it. Itâ€™s a ghost! The specter");
 			lArm.add("hisses at you and attacks!");
-			instances.getPlayer().addHealth(-5);
+
+			instances.setfight(true);
+			instances.getPlayer().setHealth(instances.getPlayer().getHealth()-5);
 			instances.changeDisplay(lArm);
 		}
 		else if (instances.currentRoom.getTitle() == "Ghost House" && s.contains("look") && instances.getCurrentRoom().getCreature().getHealth() < 0){
 			ArrayList<String> l2Arm = new ArrayList<String>();
-			l2Arm.add("The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
+			l2Arm.add("The ghost diesâ€¦ somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 			l2Arm.add("up by 5, but your health goes down by 2. You see the door to the north swing open.");
-			instances.getPlayer().addArmor(5);
-			instances.getPlayer().addHealth(-2);
+
+			instances.getPlayer().setArmor(5+instances.getPlayer().getArmor());
+			instances.getPlayer().setHealth(instances.getPlayer().getHealth()-2);//should this be max health?
 			instances.changeDisplay(l2Arm);
 		}
 		/*
@@ -101,8 +106,9 @@ public class processInput {
 		 */
 		else if (instances.currentRoom.getTitle() == "Meadow of Frollicking" && s.contains("get armor")){
 			ArrayList<String> gmArm = new ArrayList<String>();
-			gmArm.add("This is the armor of the noble knight. Your armor goes up by 3.");
-			instances.getPlayer().addArmor(3);
+
+			instances.getPlayer().setArmor(3+instances.getPlayer().getArmor());
+
 			instances.changeDisplay(gmArm);
 		}
 		/*
@@ -111,6 +117,9 @@ public class processInput {
 		else if (instances.currentRoom.getTitle() == "The Dragon's Cave" && s.contains("attack")){
 			ArrayList<String> aDrag = new ArrayList<String>();
 			aDrag.add("The dragon wakes up! Prepare yourself!");
+
+			instances.setfight(true);
+
 			instances.changeDisplay(aDrag);
 		}
 		else if (instances.currentRoom.getTitle() == "The Dragon's Cave" && s.contains("look") && instances.currentRoom.getCreature().getHealth() <= 0){
@@ -118,9 +127,10 @@ public class processInput {
 			lDrag.add("The dragon dies, leaving the sword. The sword is the sword of dragon slaying. You");
 			lDrag.add("get +5 to attack and +2 to health.");
 			instances.changeDisplay(lDrag);
-			instances.getPlayer().addAttack(5);
-			instances.getPlayer().addHealth(2);
-			instances.getPlayer().addMaxHealth(2);
+
+			instances.getPlayer().setAttack(5+instances.getPlayer().getAttack());
+			instances.getPlayer().setHealth(instances.getPlayer().getHealth()+2);
+			instances.getPlayer().setMaxHealth(instances.getPlayer().getMaxHealth()+2);
 		}
 		/*
 		 * commands for Lich room
@@ -130,14 +140,18 @@ public class processInput {
 			lLich.add("The skeleton falls. In his chest, you find the hammer of bone crushing. +3 to attack ");
 			lLich.add("and +3 to health.");
 			instances.changeDisplay(lLich);
-			instances.getPlayer().addAttack(3);
-			instances.getPlayer().addHealth(3);
-			instances.getPlayer().addMaxHealth(3);
+
+			instances.getPlayer().setAttack(3+instances.getPlayer().getAttack());
+			instances.getPlayer().setHealth(instances.getPlayer().getHealth()+3);
+			instances.getPlayer().setMaxHealth(instances.getPlayer().getMaxHealth()+3);
 		}
 		else if (instances.currentRoom.getTitle() == "The lair of the Lich" && s.contains("open")){
 			ArrayList<String> cLich = new ArrayList<String>();
 			cLich.add("The skeleton jumps up, his bones rattling. He announces that he will be attacking ");
 			cLich.add("now.");
+
+			instances.setfight(true);
+
 			instances.changeDisplay(cLich);
 		}
 		/*
@@ -149,6 +163,9 @@ public class processInput {
 			noF.add("together to form what looks to be a giant chicken man! In his hand he holds a ");
 			noF.add("pitchfork.");
 			instances.changeDisplay(noF);
+
+			instances.setfight(true);
+
 			creature chickMan = new creature("Chicken Man", 10, 10, 10, 10);
 			instances.currentRoom.setCreature(chickMan);
 		}
@@ -158,16 +175,18 @@ public class processInput {
 			yesF.add("The old man treats you to dinner. You feel energized by his meal. +1 to attack and ");
 			yesF.add("+1 to health!");
 			instances.changeDisplay(yesF);
-			instances.getPlayer().addAttack(1);
-			instances.getPlayer().addHealth(1);
-			instances.getPlayer().addMaxHealth(1);	
+
+			instances.getPlayer().setAttack(instances.getPlayer().getAttack()+1);
+			instances.getPlayer().setHealth(instances.getPlayer().getHealth()+1);
+			instances.getPlayer().setMaxHealth(instances.getPlayer().getMaxHealth()+1);	
 		}
 		
 		else if(instances.currentRoom.getTitle() == "The farm of eternal despair" && (s.contains("look") && instances.currentRoom.getCreature().getHealth() <= 0)){
 			ArrayList<String> chickDie = new ArrayList<String>();
 			chickDie.add("the chicken swarm disperses and the old man runs into his house, locking his door. ");
 			chickDie.add("You now have the pitchfork of chicken anger! +7 to attack!");
-			instances.getPlayer().addAttack(7);
+
+			instances.getPlayer().setAttack(7+instances.getPlayer().getAttack);
 			instances.changeDisplay(chickDie);
 		}
 		
@@ -177,6 +196,13 @@ public class processInput {
 			end.add("beautiful blue. A tear comes to your eye as you realize that your journey is now ");
 			end.add("over. Thanks for playing!");
 			instances.changeDisplay(end);
+		}
+
+		else if(instances.getfight()==true && s.contains("attack")) {
+			instances.getPlayer().attack(instances.getCurrentRoom().getCreature());
+			if(instances.getCurrentRoom().getCreature().getHealth()>0) {
+				instances.getCurrentRoom().getCreature().attack(instances.getPlayer());
+			}
 		}
 		
 		else {

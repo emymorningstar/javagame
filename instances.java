@@ -6,6 +6,7 @@ public class instances {
 	static ArrayList<String> display = new ArrayList(); 
 	static Room currentRoom= new Room();
 	static creature player = new creature();
+	static boolean fight=false;
 	
 	public instances(){
 		s.add("Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad");
@@ -32,5 +33,11 @@ public class instances {
 	public static creature getPlayer() {
 		return player;
 	}
-			
+	public static boolean getfight() {
+		return fight;
+	}
+	
+	public static void setfight(boolean t) {
+		fight=t;
+	}
 }
