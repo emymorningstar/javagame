@@ -74,14 +74,14 @@ public class main {
 		Room village = new Room("village", vd);
 		Room fairyForest = new Room("Fairy Forest",ffd);
 		Room secCave = new Room("Secret Cave", secC);
-		Room work = new Room("Work",wd, Bob);
-		Room merLake = new Room("Mermaids Lake", merd, cMonster);
-		Room ghostHouse = new Room("Ghost House", ghd, ghost);
+		Room work = new Room("Work",wd, Bob);//Monster
+		Room merLake = new Room("Mermaids Lake", merd, cMonster);//Monster
+		Room ghostHouse = new Room("Ghost House", ghd, ghost);//Monster
 		Room meadow = new Room("Meadow of Frollicking", medD);
-		Room dragonCave = new Room("The Dragon's Cave", dragD, dragon);
-		Room lichHouse = new Room("The lair of the Lich", lichD, lich);
-		Room farm = new Room ("The farm of eternal despair", farmD, chickMan);
-		Room badLair = new Room("Dr. Big Bad's Lair", bigD);
+		Room dragonCave = new Room("The Dragon's Cave", dragD, dragon);//Monster
+		Room lichHouse = new Room("The lair of the Lich", lichD, lich);//Monster
+		Room farm = new Room ("The farm of eternal despair", farmD, chickMan);//Monster
+		Room badLair = new Room("Dr. Big Bad's Lair", bigD);//Monster????
 		Door door1 = new Door(fairyForest, secCave, work);
 		Door door2 = new Door(merLake, ghostHouse, meadow);
 		Door door3 = new Door(dragonCave, lichHouse, farm);
@@ -101,7 +101,16 @@ public class main {
 		
 		while (true) {
 			l.render();
-		
+			
+		if(instances.getfight()==true) {
+			System.out.println("start fight");
+			while(instances.getCurrentRoom().getCreature().getHealth()>0) {
+				l.render();
+				
+			}
+			System.out.println("end fight");
+			instances.setfight(false);
+		}
 			try {
 				Thread.sleep(10);
 

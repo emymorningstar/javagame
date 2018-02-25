@@ -60,4 +60,9 @@ public class creature {
 	public void setAttack(int att){
 		attack = att;
 	}
+	public void attack(creature c) {
+		c.setHealth(this.getHealth()-c.getAttack());
+		System.out.println("you have"+ instances.getPlayer().getHealth()+"health");
+		System.out.println("they have"+ instances.getCurrentRoom().getCreature().getHealth()+"health");
+	}
 }
