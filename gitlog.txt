@@ -1,0 +1,403 @@
+$ git log
+commit 3a961f200f31c41ce0238b0e579d38d464c2d34a (HEAD -> master, origin/master,                                                                                                                 origin/HEAD)
+commit 3a961f200f31c41ce0238b0e579d38d464c2d34a (HEAD -> master, origin/master,
+origin/HEAD)
+Merge: 7f9808e a386070
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 17:20:24 2018 -0500
+
+    Merge branch 'master' of https://github.com/emymorningstar/javagame
+    so I can add the docs
+
+commit 7f9808ef9ef5c10381aec4a45fb586cc8098062d
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 17:19:54 2018 -0500
+
+    add docs
+
+commit a38607015a5def79f03741c0ac12c055a0334fe4
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Wed Feb 28 17:11:06 2018 -0500
+
+    added bugreport from find bugs
+
+commit 08e406a52609f02bec549625386b021816d8a3cf
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 16:57:54 2018 -0500
+
+    add UML diagram
+
+commit 00b2a4a9f4ea4ec6c91b26cdca87a21a3624518a
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 16:36:59 2018 -0500
+
+    fix javadoc comments
+
+commit 12b21974678f327b5f78eb32e350e518b380c455
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 16:16:53 2018 -0500
+
+    add javadoc comments to door
+
+commit 1782910c6b661c09c2bb9df5a0cb8a14d6d8094a
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Wed Feb 28 16:12:41 2018 -0500
+
+    add javadoc comments
+
+commit dc9413ee41565d0f57fc74722a8eed08e8b377ed
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Wed Feb 28 10:23:18 2018 -0500
+
+    Add files via upload
+
+commit a74482ce5c668c06340fd27ed93faae666e802f2
+Merge: 55426b0 22fb131
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sat Feb 24 21:22:16 2018 -0500
+
+    Merge pull request #9 from emymorningstar/newbranch
+
+    try to merge
+
+commit 22fb131d1820f7ebe16c9e32ebc48f943b3939b5 (origin/newbranch)
+Merge: 9a9723a 55426b0
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sat Feb 24 21:22:04 2018 -0500
+
+    Merge branch 'master' into newbranch
+
+commit 9a9723a5e489fa202b7b424546f967116c596ffd (newbranch)
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sat Feb 24 21:07:33 2018 -0500
+
+    added in a combat system
+
+commit 55426b0a841fd4152b67343dd03165764f9ae012
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Fri Feb 23 14:41:41 2018 -0500
+
+    inputs
+
+    Added inputs.
+
+commit e322746fdd41771f7f69032fdd4465ff073e2333
+Merge: 87d320c 5eb62e5
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sun Feb 18 16:54:25 2018 -0500
+
+    Merge pull request #8 from emymorningstar/branch2
+
+    Branch2
+
+commit 5eb62e521f06b613c831c34815a234e9d94084f8
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:52:24 2018 -0500
+
+    added player to instances
+
+commit 077c06abe112695ca330d924f87052499dc9426c
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:51:19 2018 -0500
+
+    added creatures to room
+
+commit 87d320cb40176c74afd0bb304282ba50f579bdf3
+Merge: 8ac6a11 fa196ed
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sun Feb 18 16:46:06 2018 -0500
+
+    Merge pull request #7 from emymorningstar/branch1
+
+    new font layout to merge
+
+commit fa196ed37e66693dd2bdc4342ffa927a33552bbe
+Merge: b90441a 8ac6a11
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sun Feb 18 16:45:52 2018 -0500
+
+    Merge branch 'master' into branch1
+
+commit b90441a51ea2033f8be72c2fe271670ad4869eb5 (origin/branch1, branch1)
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sun Feb 18 16:41:27 2018 -0500
+
+    new font layout
+
+commit 8ac6a11cbeceaec36967dc218637c70373443800 (origin/branch2)
+Merge: 032beef 04cccd9
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:39:15 2018 -0500
+
+    Merge pull request #6 from emymorningstar/branch1
+
+    Branch1
+
+commit 04cccd95ffc8257e01e21e89c177eb9fe5395c9b
+Merge: c15a2d1 032beef
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:39:07 2018 -0500
+
+    Merge branch 'master' into branch1
+
+commit c15a2d1b54263bec8969cefb3f3758140ca3df1b
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:37:23 2018 -0500
+
+    fixed layout
+
+commit ddd697818c845540aba0dfb2d1ffadab5f4d7adb
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 16:34:44 2018 -0500
+
+    Added cases for rooms
+
+commit 032beef661dc6cd375dada74950bae56471bdcad
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sun Feb 18 14:06:30 2018 -0500
+
+    pushing working code
+
+commit 80aa418b02314ce0dc990a4532a327d623a20ca0
+Merge: 4ac7173 c44fdfe
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:36:50 2018 -0500
+
+    Merge pull request #5 from emymorningstar/branch1
+
+    Branch1
+
+commit c44fdfe889767b76744ec71110d3abeaf5705f7c
+Merge: 04be358 4ac7173
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:36:42 2018 -0500
+
+    Merge branch 'master' into branch1
+
+commit 4ac7173df05bded5c769b895b88955071d8c9e84
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:22:54 2018 -0500
+
+    deleted faulty creature file
+
+commit 8759f904e6d8a238550317759443e378e080baa3
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:21:34 2018 -0500
+
+    Created creature
+
+commit 04be3588c4fc28cdebe9fe4e213657c11b18f580
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:19:10 2018 -0500
+
+    changed door
+
+commit 8a2ec0bec5f2da982e48a59a60c84d236887fc2f
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:18:16 2018 -0500
+
+    updated room
+
+commit 8ad0ba2b48ea650856bb819fb836dbe08a703322
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 13:16:23 2018 -0500
+
+    added characters
+
+commit 7a80504c88ff16ca8fe6c4ec382ead62dae20a67
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:48:21 2018 -0500
+
+    Completely changed
+
+commit 595874ad31679719230168684d886f63392a8198
+Merge: 2e866fe 2a45f62
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:24:19 2018 -0500
+
+    Merge pull request #4 from emymorningstar/branch1
+
+    Branch1
+
+commit 2a45f624d192e48f862ac19b064e6b9477cb67f6
+Merge: 3a6dc35 2e866fe
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:24:03 2018 -0500
+
+    Merge branch 'master' into branch1
+
+commit 2e866fe884270dbc8abde1722be57635acc10c76
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:20:11 2018 -0500
+
+    Created creature
+
+    A class that keeps contains information on the different creatures in the ga                                                                                                                me, including the character.
+
+commit b8fd17fb7c9dc0dda68606c2da35ae69f90dfbb7
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sun Feb 18 12:18:29 2018 -0500
+
+    added instances pand input class
+
+commit 3a6dc354de614f9660e2eb20909d07847251768c
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:17:49 2018 -0500
+
+    Array-List-Vector
+
+commit 399ef1c9051f760f0a13c79ae820c9ee007246f8
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sun Feb 18 12:16:00 2018 -0500
+
+    changed strings to arraylists
+
+commit f478bb745c343e035ea4901d35b64511e89c7239
+Merge: 0856e86 355e648
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sun Feb 18 11:23:05 2018 -0500
+
+    Merge pull request #3 from emymorningstar/branch1
+
+    added rooms to main
+
+commit 355e6485523de65d99904359e1a41fa8f92b6ca0
+Merge: 2d3fb60 0856e86
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Sun Feb 18 11:22:43 2018 -0500
+
+    Merge branch 'master' into branch1
+
+commit 0856e86fecf9303c1ba77c379e9350ecea11907f
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sat Feb 17 20:24:27 2018 -0500
+
+    add strings
+
+commit 2d3fb6018c18920db00f5a171a7f5352bbac30ac
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 20:22:40 2018 -0500
+
+    added rooms to main
+
+commit ae9b395fc4314e109af2823a92c4c6cd33c20b69
+Merge: 6e4f5b8 a17d37d
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:22:33 2018 -0500
+
+    Merge pull request #2 from emymorningstar/branch1
+
+    Branch1
+
+commit a17d37df85275653088cff3167ad66bed5119364
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:21:42 2018 -0500
+
+    updated door
+
+commit 39f5616082620f8478bb64f8e21a7ee5b05c71ac
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:20:55 2018 -0500
+
+    updated  main
+
+commit 6e4f5b8cda1612c06e2b496fc1ba0a48eebad348
+Merge: 3db1a99 8583e47
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:19:40 2018 -0500
+
+    Merge pull request #1 from emymorningstar/branch1
+
+    summary
+
+commit 8583e47d4e047f02444c242756019b901202d298
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:18:56 2018 -0500
+
+    summary
+
+    updated room
+
+commit 3db1a99176f37367096338db6b6cfbce07d0d34b
+Merge: 3708f90 c0cec8a
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Thu Feb 8 19:33:07 2018 -0500
+
+    Merge branch 'master' of https://github.com/emymorningstar/javagame
+
+:
+Merge: 3db1a99 8583e47
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:19:40 2018 -0500
+
+    Merge pull request #1 from emymorningstar/branch1
+
+    summary
+
+commit 8583e47d4e047f02444c242756019b901202d298
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Sat Feb 17 19:18:56 2018 -0500
+
+    summary
+
+    updated room
+
+commit 3db1a99176f37367096338db6b6cfbce07d0d34b
+Merge: 3708f90 c0cec8a
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Thu Feb 8 19:33:07 2018 -0500
+
+    Merge branch 'master' of https://github.com/emymorningstar/javagame
+
+commit 3708f9096d76d81fd4c4b1e2042335176e697ac8
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Thu Feb 8 19:32:10 2018 -0500
+
+    adds some better layout for the text and new methods
+
+commit c0cec8ac16c8d38f01d70b4f911ced8092c9e885
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Thu Feb 8 18:53:44 2018 -0500
+
+    Create room.java
+
+commit 838eb75a62c630c545ee530fb394a6b5693c70f5
+Author: burgerbaron <31454265+burgerbaron@users.noreply.github.com>
+Date:   Thu Feb 8 18:41:50 2018 -0500
+
+    Create door.java
+
+    an object that lets you move between rooms.
+
+commit 1724cb4fa4ea748a365a3f8426d19f7f5744c56e
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Thu Feb 8 18:34:44 2018 -0500
+
+    draws text and background color
+
+commit 3a68aeca2fcc8de0a4b763a76a0c5dc2f244e363
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Sat Feb 3 22:47:12 2018 -0500
+
+    clears text field after submit
+
+commit 4617505693cf0a44d3d5c6b8f3beba64fee845dc
+Author: emymorningstar <emymorningstar@gmail.com>
+Date:   Thu Feb 1 20:08:51 2018 -0500
+
+    fixed a bug
+
+commit 5e665958f360d56fc48fd496f88fd358a1abc266
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Thu Feb 1 20:00:01 2018 -0500
+
+    Add files via upload
+
+    starting project. includes submit button poorly designed layout and a text input
+
+commit 4e346045514820d93412d412e7ff5a941ac27846
+Author: emymorningstar <35381999+emymorningstar@users.noreply.github.com>
+Date:   Thu Feb 1 19:58:18 2018 -0500
+
+    Initial commit
+(END)

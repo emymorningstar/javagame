@@ -1,34 +1,32 @@
 import java.util.ArrayList;
 
-public class Room 
-{
+public class Room {
 	// Member variables
 	private Door door;
 	private String roomTitle;
 	private ArrayList<String> roomDescription;
 	private creature character;
 
-	
 	/**
 	 * Blank constructor
 	 */
-	public Room()
-	{
+	public Room() {
 		// Blank title + description
-		roomTitle = new String ();
+		roomTitle = new String();
 		roomDescription = new ArrayList<String>();
 		door = new Door();
-		character= null;
+		character = null;
 	}
 
 	/**
 	 * partial constructor
 	 * 
-	 * @param String title
-	 * @param ArrayList<String> discription
+	 * @param String
+	 *            title
+	 * @param ArrayList<String>
+	 *            discription
 	 */
-	public Room( String title, ArrayList<String> d )
-	{
+	public Room(final String title, final ArrayList<String> d) {
 		// Assign title
 		roomTitle = title;
 
@@ -37,101 +35,109 @@ public class Room
 
 		// Blank exits
 		door = new Door();
-		
+
 		character = null;
 	}
 
 	/**
 	 * full constructor
 	 * 
-	 * @param 		String title
-	 * @param 		ArrayList<String> description
-	 * @param 		creature c		creature
+	 * @param String title
+	 *            
+	 * @param ArrayList<String> description
+	 *           
+	 * @param creature c creature
+	 *            
 	 */
-	public Room( String title, ArrayList<String> description, creature c )
-	{
+	public Room(final String title, final ArrayList<String> description, final creature c) {
 		roomTitle = title;
 		roomDescription = description;
 		door = new Door();
 		character = c;
 	}
+
 	/**
-	 *sets door to exit the room
+	 * sets door to exit the room
 	 *
-	 * @param Door exit
+	 * @param Door
+	 *            exit
 	 * 
 	 */
-	public void setDoor ( Door exit )
-	{
-		door= exit;
+	public void setDoor(final Door exit) {
+		door = exit;
 	}
+
 	/**
-	 *gets room door
+	 * gets room door
 	 *
 	 * @return Door door
 	 * 
 	 */
-	public Door getDoors ()
-	{
+	public Door getDoors() {
 		return door;
 	}
+
 	/**
-	 *gets room title
+	 * gets room title
 	 *
 	 * @return String roomTitle
 	 * 
 	 */
-	public String getTitle()
-	{
+	public String getTitle() {
 		return roomTitle;
 	}
+
 	/**
-	 *sets room title
+	 * sets room title
 	 *
-	 * @param String title
+	 * @param String
+	 *            title
 	 * 
 	 */
-	public void setTitle( String title )
-	{
+	public void setTitle(final String title) {
 		roomTitle = title;
 	}
+
 	/**
-	 *gets room description
+	 * gets room description
 	 *
 	 * @return ArrayList<String> roomDescription
 	 * 
 	 */
-	public ArrayList<String> getDescription()
-	{
+	public ArrayList<String> getDescription() {
 		return roomDescription;
 	}
+
 	/**
-	 *sets room description
+	 * sets room description
 	 *
-	 * @param ArrayList<String> description 
+	 * @param ArrayList<String>
+	 *            description
 	 * 
 	 */
-	public void setDescription( ArrayList<String> description )
-	{
+	public void setDescription(final ArrayList<String> description) {
 		roomDescription = description;
 	}
+
 	/**
-	 *gets room creature
+	 * gets room creature
 	 *
-	 * @return Creature 
+	 * @return Creature
 	 * 
 	 */
-	public creature getCreature(){
+	public creature getCreature() {
 		return character;
 	}
+
 	/**
-	 *sets room creature
+	 * sets room creature
 	 *
-	 * @param Creature c
+	 * @param Creature
+	 *            c
 	 * 
 	 */
-	public void setCreature(creature c){
+	public void setCreature(final creature c) {
 		character = c;
 	}
-	
+
 }

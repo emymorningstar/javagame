@@ -35,39 +35,41 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class layout {
-//based drawing class on a prevous assignment I did -emy
-	
+	// based drawing class on a prevous assignment I did -emy
+
 	JFrame frame;
 	Canvas canvas;
 	public static final int WIDTH = 700;
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
-	instances s= new instances();
+	instances s = new instances();
+
 	/**
-	 *creates jframe and sets up interface
+	 * creates jframe and sets up interface
 	 *
-	 *@see 			interface in a new jframe window
+	 * @see interface in a new jframe window
 	 */
 	public layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
-		JTextField t=new JTextField("");
+		JTextField t = new JTextField("");
 		t.setBounds(480, 415, 100, 40);
 		b.setBounds(580, 415, 100, 40);
 		frame.add(b);
 		frame.add(t);
-		
+
 		b.addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
-			System.out.println("click");
-			Scanner sc=new Scanner(t.getText());
-			if(sc.hasNext()) {
-			String cmd=sc.nextLine();
-			processInput.doInput(cmd);
-			t.setText("");}
+			public void actionPerformed(final ActionEvent arg0) {
+				System.out.println("click");
+				Scanner sc = new Scanner(t.getText());
+				if (sc.hasNext()) {
+					String cmd = sc.nextLine();
+					processInput.doInput(cmd);
+					t.setText("");
+				}
 			}
-			});
+		});
 		JPanel panel = (JPanel) frame.getContentPane();
 		panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
 		panel.setLayout(null);
@@ -84,15 +86,15 @@ public class layout {
 		canvas.createBufferStrategy(2);
 		bufferStrategy = canvas.getBufferStrategy();
 		canvas.requestFocus();
-		Color c=new Color(66, 241, 120);
+		Color c = new Color(66, 241, 120);
 		canvas.setBackground(c);
-		
+
 	}
+
 	/**
-	 *clears the previous text
-	 *calls render text
+	 * clears the previous text calls render text
 	 *
-	 * @see 		cleared
+	 * @see cleared
 	 */
 	void render() {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
@@ -101,41 +103,45 @@ public class layout {
 		g.dispose();
 		bufferStrategy.show();
 	}
+
 	/**
 	 * calls renderString
 	 * 
-	 * @param  		Graphics2D g
+	 * @param Graphics2D
+	 *            g
 	 */
-	void render(Graphics2D g) {
-	renderString(instances.getDisplay());
-		
+	void render(final Graphics2D g) {
+		renderString(instances.getDisplay());
+
 	}
+
 	/**
 	 * puts the strings on the screen
 	 * 
-	 * @param  		Arraylist string
-	 * @see         strings 
+	 * @param Arraylist
+	 *            string
+	 * @see strings
 	 */
-	void renderString(ArrayList<String> s) {
+	void renderString(final ArrayList<String> s) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
-		g.fillRect(0, HEIGHT/2-100, WIDTH, 400);
-		g.setFont(new Font("Monospaced", Font.PLAIN, 14)); 
+		g.fillRect(0, HEIGHT / 2 - 100, WIDTH, 400);
+		g.setFont(new Font("Monospaced", Font.PLAIN, 14));
 		g.setColor(Color.WHITE);
 		for (int i = 0; i < s.size(); i++) {
-			//System.out.println(s.get(i));
-			g.drawString( s.get(i), 20, 200+i*20);
+			// System.out.println(s.get(i));
+			g.drawString(s.get(i), 20, 200 + i * 20);
 		}
-			
-		
+
 	}
+
 	/**
 	 * clears the strings from the screen
 	 * 
-	 * @param  		string
-	 * @see         Gui cleared
+	 * @param string
+	 * @see Gui cleared
 	 */
-	void clearGui(String string) {
+	void clearGui(final String string) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.clearRect(0, 0, WIDTH, HEIGHT);
 		g.dispose();

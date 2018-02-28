@@ -4,6 +4,7 @@ public class creature {
 	private int maxHealth;
 	private int armor;
 	private int attack;
+
 	/**
 	 * default constructor
 	 * 
@@ -11,112 +12,142 @@ public class creature {
 	public creature() {
 		name = "";
 		health = 10;
-		maxHealth =10;
+		maxHealth = 10;
 		armor = 10;
 		attack = 0;
 	}
+
 	/**
 	 * alternative constructor
 	 * 
 	 * 
-	 * @param String n		Name
-	 * @param int h			Health
-	 * @param int maxH		maxHealth
-	 * @param int arm		armor
-	 * @param int att		attack
+	 * @param String
+	 *            n Name
+	 * @param int
+	 *            h Health
+	 * @param int
+	 *            maxH maxHealth
+	 * @param int
+	 *            arm armor
+	 * @param int
+	 *            att attack
 	 */
-	public creature(String n, int h, int maxH, int arm, int att){
+	public creature(final String n, final int h, final int maxH, final int arm, final int att) {
 		name = n;
 		health = h;
 		maxHealth = maxH;
 		armor = arm;
 		attack = att;
 	}
+
 	/**
 	 * @return name
 	 * 
 	 */
-	public String getName(){
+	public String getName() {
 		return name;
 	}
+
 	/**
 	 * sets creature name
-	 * @param String name
+	 * 
+	 * @param String
+	 *            name
 	 * 
 	 */
-	public void setName(String n){
+	public void setName(final String n) {
 		name = n;
 	}
+
 	/**
 	 * @return health
 	 * 
 	 */
-	public int getHealth(){
+	public int getHealth() {
 		return health;
 	}
+
 	/**
 	 * sets creature health
-	 * @param int health
+	 * 
+	 * @param int
+	 *            health
 	 * 
 	 */
-	public void setHealth(int h){
+	public void setHealth(final int h) {
 		health = h;
 	}
+
 	/**
 	 * @return maxhealth
 	 * 
 	 */
-	public int getMaxHealth(){
+	public int getMaxHealth() {
 		return maxHealth;
 	}
+
 	/**
 	 * sets creature max health
-	 * @param int h		maxhealth
+	 * 
+	 * @param int
+	 *            h maxhealth
 	 * 
 	 */
-	public void setMaxHealth(int h){
+	public void setMaxHealth(final int h) {
 		maxHealth = h;
 	}
+
 	/**
 	 * @return armor
 	 * 
 	 */
-	public int getArmor(){
+	public int getArmor() {
 		return armor;
 	}
+
 	/**
 	 * sets creature armor
-	 * @param int arm		armor
+	 * 
+	 * @param int
+	 *            arm armor
 	 * 
 	 */
-	public void setArmor(int arm){
+	public void setArmor(final int arm) {
 		armor = arm;
 	}
+
 	/**
 	 * @return attack
 	 * 
 	 */
-	public int getAttack(){
+	public int getAttack() {
 		return attack;
 	}
+
 	/**
 	 * sets creature attack
 	 * 
-	 * @param int att		attack
+	 * @param int
+	 *            att attack
 	 * 
 	 */
-	public void setAttack(int att){
+	public void setAttack(final int att) {
 		attack = att;
 	}
+
 	/**
-	 * attack damage calculation method. 
+	 * attack damage calculation method.
 	 * 
-	 * @param creature c		creature
+	 * @param creature
+	 *            c creature
 	 * 
 	 */
-	public void attack(creature c) {
-		c.setHealth(this.getHealth()-c.getAttack());
-		System.out.println("you have"+ instances.getPlayer().getHealth()+"health");
-		System.out.println("they have"+ instances.getCurrentRoom().getCreature().getHealth()+"health");
+	public void attack(final creature c) {
+		c.setHealth(this.getHealth() - c.getAttack());
+		System.out.println(
+				"you have" + instances.getPlayer().getHealth() + "health");
+		System.out.println("they have"
+				+ instances.getCurrentRoom().getCreature().getHealth()
+				+ "health");
 	}
 }
