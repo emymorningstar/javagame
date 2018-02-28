@@ -45,8 +45,8 @@ public class Room
 	 * full constructor
 	 * 
 	 * @param 		String title
-	 * @param 		ArrayList<String> discription
-	 * @param 		creature c
+	 * @param 		ArrayList<String> description
+	 * @param 		creature c		creature
 	 */
 	public Room( String title, ArrayList<String> description, creature c )
 	{
@@ -127,7 +127,7 @@ public class Room
 	/**
 	 *sets room creature
 	 *
-	 *@param Creature c
+	 *@param creature c
 	 * 
 	 */
 	public void setCreature(creature c){

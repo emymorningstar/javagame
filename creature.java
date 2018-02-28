@@ -19,11 +19,11 @@ public class creature {
 	 * alternative constructor
 	 * 
 	 * 
-	 * @param String name
-	 * @param int health
-	 * @param int maxhealth
-	 * @param int armor
-	 * @param int attack
+	 * @param String n		Name
+	 * @param int h			Health
+	 * @param int maxH		maxHealth
+	 * @param int arm		armor
+	 * @param int att		attack
 	 */
 	public creature(String n, int h, int maxH, int arm, int att){
 		name = n;
@@ -71,7 +71,7 @@ public class creature {
 	}
 	/**
 	 * sets creature max health
-	 * @param int maxHealth
+	 * @param int h		maxhealth
 	 * 
 	 */
 	public void setMaxHealth(int h){
@@ -86,7 +86,7 @@ public class creature {
 	}
 	/**
 	 * sets creature armor
-	 * @param int armor
+	 * @param int arm		armor
 	 * 
 	 */
 	public void setArmor(int arm){
@@ -101,7 +101,8 @@ public class creature {
 	}
 	/**
 	 * sets creature attack
-	 * @param int attack
+	 * 
+	 * @param int att		attack
 	 * 
 	 */
 	public void setAttack(int att){
@@ -110,7 +111,7 @@ public class creature {
 	/**
 	 * attack damage calculation method. 
 	 * 
-	 * @param creature c
+	 * @param creature c		creature
 	 * 
 	 */
 	public void attack(creature c) {
