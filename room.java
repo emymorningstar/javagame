@@ -3,9 +3,9 @@ import java.util.ArrayList;
 public class Room 
 {
 	// Member variables
+	private Door door;
 	private String roomTitle;
 	private ArrayList<String> roomDescription;
-	private Door door;
 	private creature character;
 
 	
@@ -58,7 +58,7 @@ public class Room
 	/**
 	 *sets door to exit the room
 	 *
-	 *@param Door exit
+	 * @param Door exit
 	 * 
 	 */
 	public void setDoor ( Door exit )
@@ -68,7 +68,7 @@ public class Room
 	/**
 	 *gets room door
 	 *
-	 *@return Door door
+	 * @return Door door
 	 * 
 	 */
 	public Door getDoors ()
@@ -78,7 +78,7 @@ public class Room
 	/**
 	 *gets room title
 	 *
-	 *@return String roomTitle
+	 * @return String roomTitle
 	 * 
 	 */
 	public String getTitle()
@@ -88,7 +88,7 @@ public class Room
 	/**
 	 *sets room title
 	 *
-	 *@param String title
+	 * @param String title
 	 * 
 	 */
 	public void setTitle( String title )
@@ -98,7 +98,7 @@ public class Room
 	/**
 	 *gets room description
 	 *
-	 *@return ArrayList<String> roomDescription
+	 * @return ArrayList<String> roomDescription
 	 * 
 	 */
 	public ArrayList<String> getDescription()
@@ -108,7 +108,7 @@ public class Room
 	/**
 	 *sets room description
 	 *
-	 *@param ArrayList<String> description 
+	 * @param ArrayList<String> description 
 	 * 
 	 */
 	public void setDescription( ArrayList<String> description )
@@ -118,7 +118,7 @@ public class Room
 	/**
 	 *gets room creature
 	 *
-	 *@return Creature 
+	 * @return Creature 
 	 * 
 	 */
 	public creature getCreature(){
@@ -127,7 +127,7 @@ public class Room
 	/**
 	 *sets room creature
 	 *
-	 *@param creature c
+	 * @param Creature c
 	 * 
 	 */
 	public void setCreature(creature c){
