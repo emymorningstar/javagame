@@ -10,7 +10,7 @@ public class processInput {
 	 */
 	static void doInput(String s) {
 		
-		s.toLowerCase();
+		s=s.toLowerCase();
 		if (s.contains("north") && instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake" || (instances.currentRoom.getTitle() == "Mermaids Lake" && instances.currentRoom.getCreature().getHealth() <= 0)) {
 				if (instances.currentRoom.getTitle() != "Work" || (instances.currentRoom.getTitle() == "Work" && instances.currentRoom.getCreature().getHealth() <= 0)) {
