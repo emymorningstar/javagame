@@ -7,16 +7,29 @@ public class instances {
 	static Room currentRoom= new Room();
 	static creature player = new creature();
 	static boolean fight=false;
-	
+	/**
+	 * sets initial display string array
+	 * 
+	 */
 	public instances(){
 		s.add("Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad");
 		s.add("Before you is a path, leading through the dangers of this world. At the end, Dr. Big Bad");
 		s.add("awaits. The path leads north. ");
 		display=s;
 	}
+	/**
+	 * Retrieves the current display string
+	 * 
+	 * @return      current display string array
+	 */
 	public static ArrayList<String> getDisplay() {
 		return display;
 	}
+	/**
+	 * sets the current display string array
+	 * 
+	 * @param  		Araylist of strings
+	 */
 	public static void changeDisplay(ArrayList<String> a) {
 		display=a;
 	}

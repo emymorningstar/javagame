@@ -8,7 +8,10 @@ public class Room
 	private Door door;
 	private creature character;
 
-	// Blank constructor
+	
+	/**
+	 * Blank constructor
+	 */
 	public Room()
 	{
 		// Blank title + description
@@ -18,7 +21,12 @@ public class Room
 		character= null;
 	}
 
-	// Partial constructor
+	/**
+	 * partial constructor
+	 * 
+	 * @param String title
+	 * @param ArrayList<String> discription
+	 */
 	public Room( String title, ArrayList<String> d )
 	{
 		// Assign title
@@ -33,7 +41,13 @@ public class Room
 		character = null;
 	}
 
-	// Full constructor
+	/**
+	 * full constructor
+	 * 
+	 * @param 		String title
+	 * @param 		ArrayList<String> discription
+	 * @param 		creature c
+	 */
 	public Room( String title, ArrayList<String> description, creature c )
 	{
 		roomTitle = title;
@@ -41,41 +55,81 @@ public class Room
 		door = new Door();
 		character = c;
 	}
-
+	/**
+	 *sets door to exit the room
+	 *
+	 *@param Door exit
+	 * 
+	 */
 	public void setDoor ( Door exit )
 	{
 		door= exit;
 	}
-
+	/**
+	 *gets room door
+	 *
+	 *@return Door door
+	 * 
+	 */
 	public Door getDoors ()
 	{
 		return door;
 	}
-	
+	/**
+	 *gets room title
+	 *
+	 *@return String roomTitle
+	 * 
+	 */
 	public String getTitle()
 	{
 		return roomTitle;
 	}
-
+	/**
+	 *sets room title
+	 *
+	 *@param String title
+	 * 
+	 */
 	public void setTitle( String title )
 	{
 		roomTitle = title;
 	}
-
+	/**
+	 *gets room description
+	 *
+	 *@return ArrayList<String> roomDescription
+	 * 
+	 */
 	public ArrayList<String> getDescription()
 	{
 		return roomDescription;
 	}
-
+	/**
+	 *sets room description
+	 *
+	 *@param ArrayList<String> description 
+	 * 
+	 */
 	public void setDescription( ArrayList<String> description )
 	{
 		roomDescription = description;
 	}
-	
+	/**
+	 *gets room creature
+	 *
+	 *@return Creature 
+	 * 
+	 */
 	public creature getCreature(){
 		return character;
 	}
-	
+	/**
+	 *sets room creature
+	 *
+	 *@param Creature c
+	 * 
+	 */
 	public void setCreature(creature c){
 		character = c;
 	}

@@ -1,8 +1,13 @@
-
-
+import java.util.ArrayList;
 
 public class processInput {
 //write mermaid lake stuff
+	/**
+	 * checks input and changes the current display string. checks for valid input.
+	 * 
+	 * @param  		Input string
+	 * @return      nothing
+	 */
 	static void doInput(String s) {
 		
 		s.toLowerCase();
@@ -186,7 +191,7 @@ public class processInput {
 			chickDie.add("the chicken swarm disperses and the old man runs into his house, locking his door. ");
 			chickDie.add("You now have the pitchfork of chicken anger! +7 to attack!");
 
-			instances.getPlayer().setAttack(7+instances.getPlayer().getAttack);
+			instances.getPlayer().setAttack(7+instances.getPlayer().getAttack());
 			instances.changeDisplay(chickDie);
 		}
 		

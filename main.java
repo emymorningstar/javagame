@@ -2,7 +2,10 @@ import javax.swing.JFrame;
 import java.util.ArrayList;
 
 public class main {
-
+/**
+ * declares all the rooms and runs the gameloop. as well as combat loop.
+ * 
+ */
 	public static void main(String[] args) {
 		layout l= new layout();
 		creature Bob = new creature("Bob",10,10, 2, 2);

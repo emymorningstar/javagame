@@ -43,6 +43,11 @@ public class layout {
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
 	instances s= new instances();
+	/**
+	 *creates jframe and sets up interface
+	 *
+	 *@see 			interface in a new jframe window
+	 */
 	public layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
@@ -83,7 +88,12 @@ public class layout {
 		canvas.setBackground(c);
 		
 	}
-	
+	/**
+	 *clears the previous text
+	 *calls render text
+	 *
+	 * @see 		cleared
+	 */
 	void render() {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.clearRect(0, 0, WIDTH, HEIGHT);
@@ -91,11 +101,21 @@ public class layout {
 		g.dispose();
 		bufferStrategy.show();
 	}
-	
+	/**
+	 * calls renderString
+	 * 
+	 * @param  		Graphics2D g
+	 */
 	void render(Graphics2D g) {
 	renderString(instances.getDisplay());
 		
 	}
+	/**
+	 * puts the strings on the screen
+	 * 
+	 * @param  		Arraylist string
+	 * @see         strings 
+	 */
 	void renderString(ArrayList<String> s) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
@@ -109,6 +129,12 @@ public class layout {
 			
 		
 	}
+	/**
+	 * clears the strings from the screen
+	 * 
+	 * @param  		string
+	 * @see         Gui cleared
+	 */
 	void clearGui(String string) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.clearRect(0, 0, WIDTH, HEIGHT);
