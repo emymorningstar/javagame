@@ -277,7 +277,11 @@ public class processInput {
 			end.add("over. Thanks for playing!");
 			instances.changeDisplay(end);
 		}
-		
+		//added but is there a dr. big bad creature?
+		else if (instances.currentRoom.getTitle() == "Dr. Big Bad's Lair"
+				&& s.contains("attack") && instances.getfight()==false
+				) {instances.setfight(true);
+		}
 
 		else if (instances.getfight() == true && s.contains("attack")) {
 			instances.getPlayer()

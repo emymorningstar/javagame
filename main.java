@@ -14,7 +14,7 @@ public class main {
 		creature dragon = new creature("Dragon", 15, 15, 15, 3);
 		creature lich = new creature("Lich", 6, 6, 10, 8);
 		creature chickMan = new creature("Chicken Man", 10, 10, 10, 10);
-
+		creature drBigBad = new creature("Big bad", 10, 10, 10, 10);
 		ArrayList<String> start = new ArrayList<String>();
 		start.add(
 				"Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr.");
@@ -98,7 +98,7 @@ public class main {
 		Room dragonCave = new Room("The Dragon's Cave", dragD, dragon);// Monster
 		Room lichHouse = new Room("The lair of the Lich", lichD, lich);// Monster
 		Room farm = new Room("The farm of eternal despair", farmD, chickMan);// Monster
-		Room badLair = new Room("Dr. Big Bad's Lair", bigD);// Monster????
+		Room badLair = new Room("Dr. Big Bad's Lair", bigD,drBigBad);// Monster????
 		Door door1 = new Door(fairyForest, secCave, work);
 		Door door2 = new Door(merLake, ghostHouse, meadow);
 		Door door3 = new Door(dragonCave, lichHouse, farm);
