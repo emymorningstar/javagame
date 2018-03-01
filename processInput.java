@@ -11,6 +11,7 @@ public class processInput {
 	 */
 	static void doInput(String s) {
 		s = s.toLowerCase();
+		if (instances.getGame()){
 		if (s.contains("north")	&& instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake"	|| (instances.currentRoom.getTitle() == "Mermaids Lake"	&& instances.currentRoom.getCreature().getHealth() <= 0)) {
 				if (instances.currentRoom.getTitle() != "Work"|| (instances.currentRoom.getTitle() == "Work" && instances.currentRoom.getCreature().getHealth() <= 0)) {
@@ -286,6 +287,9 @@ public class processInput {
 						.attack(instances.getPlayer());
 			}
 		}
+		else if (s.contains("room")){
+			instances.changeDisplay(instances.currentRoom.getDescription());
+		}
 
 		else {
 			ArrayList<String> error = new ArrayList<String>();
@@ -294,4 +298,11 @@ public class processInput {
 		}
 
 	}
+	else{
+		ArrayList<String> over = new ArrayList<String>();
+		over.add("Your health has reached zero. Game over.");
+		instances.changeDisplay(over);
+	}
+	
+}
 }
