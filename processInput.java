@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 public class processInput {
-	// write mermaid lake stuff
 	/**
 	 * checks input and changes the current display string. checks for valid
 	 * input.
@@ -83,7 +82,7 @@ public class processInput {
 			ArrayList<String> tFairy = new ArrayList<String>();
 			tFairy.add(
 					"The fairy says she lost her helmet. If you can find it, she will give it to you!");
-			tFairy.add("Sheï¿½s nice like that.");
+			tFairy.add("She’s nice like that.");
 			instances.changeDisplay(tFairy);
 		} else if (instances.currentRoom.getTitle() == "Fairy Forest"
 				&& s.contains("look pond")) {
@@ -136,7 +135,7 @@ public class processInput {
 				&& s.contains("look armor")) {
 			ArrayList<String> lArm = new ArrayList<String>();
 			lArm.add(
-					"As you look at the armor, something crawls out of it. Itï¿½s a ghost! The specter");
+					"As you look at the armor, something crawls out of it. It’s a ghost! The specter");
 			lArm.add("hisses at you and attacks!");
 
 			instances.setfight(true);
@@ -148,7 +147,7 @@ public class processInput {
 				&& instances.getCurrentRoom().getCreature().getHealth() < 0) {
 			ArrayList<String> l2Arm = new ArrayList<String>();
 			l2Arm.add(
-					"The ghost diesï¿½ somehow. You now have the armor of Sir. Spookington! Your armor goes ");
+					"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 			l2Arm.add(
 					"up by 5, but your health goes down by 2. You see the door to the north swing open.");
 
