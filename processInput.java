@@ -11,21 +11,10 @@ public class processInput {
 	 */
 	static void doInput(String s) {
 		s = s.toLowerCase();
-		if (s.contains("north")
-				&& instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
-			if (instances.currentRoom.getTitle() != "Mermaids Lake"
-					|| (instances.currentRoom.getTitle() == "Mermaids Lake"
-							&& instances.currentRoom.getCreature()
-									.getHealth() <= 0)) {
-				if (instances.currentRoom.getTitle() != "Work"
-						|| (instances.currentRoom.getTitle() == "Work"
-								&& instances.currentRoom.getCreature()
-										.getHealth() <= 0)) {
-					if (instances.currentRoom.getTitle() != "Ghost House"
-							|| (instances.currentRoom
-									.getTitle() == "Ghost House"
-									&& instances.currentRoom.getCreature()
-											.getHealth() <= 0)) {
+		if (s.contains("north")	&& instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
+			if (instances.currentRoom.getTitle() != "Mermaids Lake"	|| (instances.currentRoom.getTitle() == "Mermaids Lake"	&& instances.currentRoom.getCreature().getHealth() <= 0)) {
+				if (instances.currentRoom.getTitle() != "Work"|| (instances.currentRoom.getTitle() == "Work" && instances.currentRoom.getCreature().getHealth() <= 0)) {
+					if (instances.currentRoom.getTitle() != "Ghost House" || (instances.currentRoom.getTitle() == "Ghost House"	&& instances.currentRoom.getCreature().getHealth() <= 0)) {
 						Door d = instances.getCurrentRoom().getDoors();
 						instances.setCurrentRoom(d.getLeadsTo());
 					}
@@ -36,11 +25,9 @@ public class processInput {
 		/*
 		 * commands for Work room
 		 */
-		else if (instances.currentRoom.getTitle() == "Work"
-				&& (s.contains("work") || s.contains("cubicle"))) {
+		else if (instances.currentRoom.getTitle() == "Work"	&& (s.contains("work") || s.contains("cubicle"))) {
 			ArrayList<String> working = new ArrayList<String>();
-			working.add(
-					"You start to work. The day goes on, and you can feel the boredom kick in.");
+			working.add("You start to work. The day goes on, and you can feel the boredom kick in.");
 			working.add("You gain 5 work dollars.");
 
 			instances.changeDisplay(working);
@@ -94,8 +81,7 @@ public class processInput {
 		/*
 		 * commands for The Secret Cave
 		 */
-		else if (instances.currentRoom.getTitle() == "Secret Cave"
-				&& s.contains("get helmet")) {
+		else if (instances.currentRoom.getTitle() == "Secret Cave" && s.contains("get helmet")) {
 			ArrayList<String> gsHelm = new ArrayList<String>();
 			gsHelm.add(
 					"You got the helmet of +2 beating. Your defense goes up by 1, but your attack ");
@@ -144,7 +130,7 @@ public class processInput {
 			instances.changeDisplay(lArm);
 		} else if (instances.currentRoom.getTitle() == "Ghost House"
 				&& s.contains("look")
-				&& instances.getCurrentRoom().getCreature().getHealth() < 0) {
+				&& instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 			ArrayList<String> l2Arm = new ArrayList<String>();
 			l2Arm.add(
 					"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
@@ -167,6 +153,7 @@ public class processInput {
 		else if (instances.currentRoom.getTitle() == "Meadow of Frollicking"
 				&& s.contains("get armor")) {
 			ArrayList<String> gmArm = new ArrayList<String>();
+			gmArm.add("This is the armor of the noble knight. Your armor goes up by 3.");
 
 			instances.getPlayer()
 					.setArmor(3 + instances.getPlayer().getArmor());
@@ -177,7 +164,8 @@ public class processInput {
 		 * commands for dragons lair
 		 */
 		else if (instances.currentRoom.getTitle() == "The Dragon's Cave"
-				&& s.contains("attack")&&instances.getfight()!=true) {
+				&& s.contains("look")
+				&& instances.currentRoom.getCreature().getHealth()>0) {
 			ArrayList<String> aDrag = new ArrayList<String>();
 			aDrag.add("The dragon wakes up! Prepare yourself!");
 
@@ -280,13 +268,15 @@ public class processInput {
 		}
 
 		else if (instances.currentRoom.getTitle() == "Dr. Big Bad's Lair"
-				&& instances.currentRoom.getCreature().getHealth() <= 0) {
+				&& instances.currentRoom.getCreature().getHealth() <= 0
+				) {
 			ArrayList<String> end = new ArrayList<String>();
 			end.add("Dr. Big Bad falls before you. You hear birds start to sing and the sky turns a ");
 			end.add("beautiful blue. A tear comes to your eye as you realize that your journey is now ");
 			end.add("over. Thanks for playing!");
 			instances.changeDisplay(end);
 		}
+		
 
 		else if (instances.getfight() == true && s.contains("attack")) {
 			instances.getPlayer()
