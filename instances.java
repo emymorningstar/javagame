@@ -7,6 +7,7 @@ public class instances {
 	static Room currentRoom = new Room();
 	static creature player = new creature();
 	static boolean fight = false;
+	static boolean game = true;
 
 	/**
 	 * sets initial display string array
@@ -34,7 +35,7 @@ public class instances {
 	 * @param Araylist
 	 *            of strings
 	 */
-	public static void changeDisplay(final ArrayList<String> a) {
+	public static void changeDisplay(ArrayList<String> a) {
 		display = a;
 	}
 
@@ -43,7 +44,7 @@ public class instances {
 
 	}
 
-	public static void setCurrentRoom(final Room r) {
+	public static void setCurrentRoom(Room r) {
 		currentRoom = r;
 		instances.changeDisplay(instances.getCurrentRoom().getDescription());
 	}
@@ -56,7 +57,9 @@ public class instances {
 		return fight;
 	}
 
-	public static void setfight(final boolean t) {
+	public static void setfight(boolean t) {
 		fight = t;
 	}
+	
+	
 }
