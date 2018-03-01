@@ -61,5 +61,12 @@ public class instances {
 		fight = t;
 	}
 	
+	public static boolean getGame(){
+		return game;
+	}
+	
+	public static void setGame(boolean g){
+		game = g;
+	}
 	
 }
