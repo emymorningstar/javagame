@@ -1,3 +1,7 @@
+package adventurePath;
+
+import java.util.ArrayList;
+
 public class creature {
 	private String name;
 	private int health;
@@ -144,10 +148,9 @@ public class creature {
 	 */
 	public void attack(final creature c) {
 		c.setHealth(this.getHealth() - c.getAttack());
-		System.out.println(
-				"you have" + instances.getPlayer().getHealth() + "health");
-		System.out.println("they have"
-				+ instances.getCurrentRoom().getCreature().getHealth()
-				+ "health");
+		ArrayList<String> a = new ArrayList<String>();
+		a.add("You have " + instances.getPlayer().getHealth()+ " health.");
+		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth()+ " health.");
+		instances.changeDisplay(a);
 	}
 }
