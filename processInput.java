@@ -177,7 +177,7 @@ public class processInput {
 		 * commands for dragons lair
 		 */
 		else if (instances.currentRoom.getTitle() == "The Dragon's Cave"
-				&& s.contains("attack dragon")) {
+				&& s.contains("attack")&&instances.getfight()!=true) {
 			ArrayList<String> aDrag = new ArrayList<String>();
 			aDrag.add("The dragon wakes up! Prepare yourself!");
 
