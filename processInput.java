@@ -83,7 +83,7 @@ public class processInput {
 			ArrayList<String> tFairy = new ArrayList<String>();
 			tFairy.add(
 					"The fairy says she lost her helmet. If you can find it, she will give it to you!");
-			tFairy.add("She’s nice like that.");
+			tFairy.add("She�s nice like that.");
 			instances.changeDisplay(tFairy);
 		} else if (instances.currentRoom.getTitle() == "Fairy Forest"
 				&& s.contains("look pond")) {
@@ -109,13 +109,34 @@ public class processInput {
 		}
 
 		/*
+		 * commands for Mermaid Lake 
+		 */
+		else if (instances.currentRoom.getTitle() == "Mermaids Lake"
+				&& s.contains("island") && instances.currentRoom.getCreature().getHealth()>0){
+			ArrayList<String> mIsle = new ArrayList<String>();
+			mIsle.add("you try to swim to the island, but before you can a giant monster comes out of the");
+			mIsle.add("water.");
+			instances.setfight(true);
+			instances.changeDisplay(mIsle);
+		}
+		else if (instances.currentRoom.getTitle() == "Mermaids Lake"
+				&& s.contains("island") && instances.currentRoom.getCreature().getHealth()<=0){
+			ArrayList<String> mIsle2 = new ArrayList<String>();
+			mIsle2.add("With the monster dead, you swim to the island and find the armor of seashells! Your");
+			mIsle2.add("armor and health go up by 2.");
+			instances.changeDisplay(mIsle2);
+			instances.getPlayer().setMaxHealth(2 + instances.getPlayer().getMaxHealth());
+			instances.getPlayer().setHealth(2 + instances.getPlayer().getHealth());
+			instances.getPlayer().setArmor(2 + instances.getPlayer().getArmor());
+		}
+		/*
 		 * commands for Ghost House
 		 */
 		else if (instances.currentRoom.getTitle() == "Ghost House"
 				&& s.contains("look armor")) {
 			ArrayList<String> lArm = new ArrayList<String>();
 			lArm.add(
-					"As you look at the armor, something crawls out of it. It’s a ghost! The specter");
+					"As you look at the armor, something crawls out of it. It�s a ghost! The specter");
 			lArm.add("hisses at you and attacks!");
 
 			instances.setfight(true);
@@ -127,7 +148,7 @@ public class processInput {
 				&& instances.getCurrentRoom().getCreature().getHealth() < 0) {
 			ArrayList<String> l2Arm = new ArrayList<String>();
 			l2Arm.add(
-					"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
+					"The ghost dies� somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 			l2Arm.add(
 					"up by 5, but your health goes down by 2. You see the door to the north swing open.");
 
@@ -157,7 +178,7 @@ public class processInput {
 		 * commands for dragons lair
 		 */
 		else if (instances.currentRoom.getTitle() == "The Dragon's Cave"
-				&& s.contains("attack")&&instances.getfight()!=true) {
+				&& s.contains("attack dragon")) {
 			ArrayList<String> aDrag = new ArrayList<String>();
 			aDrag.add("The dragon wakes up! Prepare yourself!");
 
