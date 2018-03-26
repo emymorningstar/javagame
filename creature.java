@@ -151,6 +151,12 @@ public class creature {
 		ArrayList<String> a = new ArrayList<String>();
 		a.add("You have " + instances.getPlayer().getHealth()+ " health.");
 		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth()+ " health.");
+		if(instances.getCurrentRoom().getCreature().getHealth()<=0 && instances.getPlayer().getHealth()>=0) {
+		a.add("(north, look)");
+		}
+		else {
+			a.add("(attack)");
+		}
 		instances.changeDisplay(a);
 	}
 }

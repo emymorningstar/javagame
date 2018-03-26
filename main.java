@@ -21,33 +21,34 @@ public class main {
 		start.add(
 				"Big Bad Before you is a path, leading through the dangers of this world. At the");
 		start.add("end, Dr. Big Bad awaits. The path leads north. ");
+		
 
 		ArrayList<String> vd = new ArrayList<String>();
 		vd.add("You find yourself in a village filled with happiness. You have been resting ");
 		vd.add("here for a couple of days, regaining your strength to fight Dr. Big Bad. There is a ");
 		vd.add("path that leads north.");
-
+		vd.add("(north)");
 		ArrayList<String> ffd = new ArrayList<String>();
 		ffd.add("You are now in the fairy forest. All around you trees are buzzing with the sound of");
 		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.”");
-
+		ffd.add("(north, talk fairy, look tree, look pond)");
 		ArrayList<String> secC = new ArrayList<String>();
 		secC.add(
 				"You find yourself navigating a strange cave. The walls glow a luminescent green,");
 		secC.add("allowing you to see. In the middle of the cave is a pond.");
-
+		secC.add("(north)");
 		ArrayList<String> wd = new ArrayList<String>();
 		wd.add("You are now in a concrete building filled with cubicles. The doors behind you and too");
 		wd.add("the north are locked. You can see a cubicle with your name on it. In the back you");
 		wd.add("can see an office.");
-
+		wd.add("(work, cubicle, office)");
 		ArrayList<String> merd = new ArrayList<String>();
 		merd.add(
 				"You are now in front of a gorgeous lake. You hear singing coming from it, luring you ");
 		merd.add(
 				"in. Beautiful women with fish tails for legs swim around. In the middle of the lake, ");
 		merd.add("you can see a tiny island with something shiny on it.");
-
+		merd.add("(island)");
 		ArrayList<String> ghd = new ArrayList<String>();
 		ghd.add("You enter a big mansion on top of the hill. All around you are strange whispers and ");
 		ghd.add("moans. On the north side of the room is a locked door. In the middle of the room is ");

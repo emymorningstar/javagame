@@ -39,6 +39,7 @@ public class processInput {
 					"In the office you can see the manager: a giant troll with a nametage that says Bob.");
 			office.add(
 					"Bob gives you a stern look and tells you to get back to work.");
+			office.add("(talk bob)");
 			instances.changeDisplay(office);
 		} else if (instances.currentRoom.getTitle() == "Work"
 				&& (s.contains("talk bob") || s.contains("talk to bob"))) {
@@ -57,11 +58,13 @@ public class processInput {
 				&& s.contains("look tree")) {
 			ArrayList<String> lTree = new ArrayList<String>();
 			lTree.add("In the tree you see a glowing helmet.");
+			lTree.add("(get helmet, room)");
 			instances.changeDisplay(lTree);
 		} else if (instances.currentRoom.getTitle() == "Fairy Forest"
 				&& s.contains("get helmet")) {
 			ArrayList<String> gfHelm = new ArrayList<String>();
 			gfHelm.add("You got the fairy helmet! Your defense goes up by 3!");
+			gfHelm.add("(north)");
 			instances.changeDisplay(gfHelm);
 			instances.getPlayer()
 					.setArmor(3 + instances.getPlayer().getArmor());
@@ -71,11 +74,13 @@ public class processInput {
 			tFairy.add(
 					"The fairy says she lost her helmet. If you can find it, she will give it to you!");
 			tFairy.add("She’s nice like that.");
+			tFairy.add("(room)");
 			instances.changeDisplay(tFairy);
 		} else if (instances.currentRoom.getTitle() == "Fairy Forest"
 				&& s.contains("look pond")) {
 			ArrayList<String> lpond = new ArrayList<String>();
 			lpond.add("the pond seems wet.");
+			lpond.add("(room)");
 			instances.changeDisplay(lpond);
 		}
 
@@ -87,6 +92,7 @@ public class processInput {
 			gsHelm.add(
 					"You got the helmet of +2 beating. Your defense goes up by 1, but your attack ");
 			gsHelm.add("goes up by 2!");
+			gsHelm.add("(north)");
 			instances.changeDisplay(gsHelm);
 			instances.getPlayer()
 					.setArmor(1 + instances.getPlayer().getArmor());
@@ -124,7 +130,7 @@ public class processInput {
 			lArm.add(
 					"As you look at the armor, something crawls out of it. It’s a ghost! The specter");
 			lArm.add("hisses at you and attacks!");
-
+			lArm.add("(attack)");
 			instances.setfight(true);
 			instances.getPlayer()
 					.setHealth(instances.getPlayer().getHealth() - 5);
@@ -137,6 +143,7 @@ public class processInput {
 					"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 			l2Arm.add(
 					"up by 5, but your health goes down by 2. You see the door to the north swing open.");
+			l2Arm.add(("north"));
 
 			instances.getPlayer()
 					.setArmor(5 + instances.getPlayer().getArmor());
