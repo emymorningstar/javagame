@@ -17,7 +17,7 @@ public class Door
 	 *@param 		Room to1, Room to2,Room to3
 	 * 
 	 */
-	public Door(final Room to1, final Room to2, final Room to3 )
+	public Door(final Room to1, final Room to2, final Room to3)
 	{
 		Random r = new Random();
 		int n = r.nextInt(2)+1;
@@ -38,7 +38,7 @@ public class Door
 	 *@param 		Room to
 	 * 
 	 */
-	public void setLeadsTo ( final Room to )
+	public void setLeadsTo(final Room to)
 	{
 		leadsTo = to;
 	}
@@ -48,7 +48,7 @@ public class Door
 	 *@returns 		Room leadsto
 	 * 
 	 */
-	public Room getLeadsTo (  )
+	public Room getLeadsTo()
 	{
 		return leadsTo;
 	}
