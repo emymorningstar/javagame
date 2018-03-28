@@ -10,7 +10,7 @@ public class creature {
 	private int attack;
 
 	/**
-	 * default constructor
+	 * default constructor.
 	 * 
 	 */
 	public creature() {
@@ -22,7 +22,7 @@ public class creature {
 	}
 
 	/**
-	 * alternative constructor
+	 * alternative constructor.
 	 * 
 	 * 
 	 * @param String
@@ -53,7 +53,7 @@ public class creature {
 	}
 
 	/**
-	 * sets creature name
+	 * sets creature name.
 	 * 
 	 * @param String
 	 *            name
@@ -72,7 +72,7 @@ public class creature {
 	}
 
 	/**
-	 * sets creature health
+	 * sets creature health.
 	 * 
 	 * @param int
 	 *            health
@@ -91,7 +91,7 @@ public class creature {
 	}
 
 	/**
-	 * sets creature max health
+	 * sets creature max health.
 	 * 
 	 * @param int
 	 *            h maxhealth
@@ -110,7 +110,7 @@ public class creature {
 	}
 
 	/**
-	 * sets creature armor
+	 * sets creature armor.
 	 * 
 	 * @param int
 	 *            arm armor
@@ -129,7 +129,7 @@ public class creature {
 	}
 
 	/**
-	 * sets creature attack
+	 * sets creature attack.
 	 * 
 	 * @param int
 	 *            att attack

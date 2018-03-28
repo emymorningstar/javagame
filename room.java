@@ -8,7 +8,7 @@ public class Room {
 	private creature character;
 
 	/**
-	 * Blank constructor
+	 * Blank constructor.
 	 */
 	public Room() {
 		// Blank title + description
@@ -19,7 +19,7 @@ public class Room {
 	}
 
 	/**
-	 * partial constructor
+	 * partial constructor.
 	 * 
 	 * @param String
 	 *            title
@@ -40,7 +40,7 @@ public class Room {
 	}
 
 	/**
-	 * full constructor
+	 * full constructor.
 	 * 
 	 * @param String title
 	 *            
@@ -57,7 +57,7 @@ public class Room {
 	}
 
 	/**
-	 * sets door to exit the room
+	 * sets door to exit the room.
 	 *
 	 * @param Door
 	 *            exit
@@ -68,7 +68,7 @@ public class Room {
 	}
 
 	/**
-	 * gets room door
+	 * gets room door.
 	 *
 	 * @return Door door
 	 * 
@@ -78,7 +78,7 @@ public class Room {
 	}
 
 	/**
-	 * gets room title
+	 * gets room title.
 	 *
 	 * @return String roomTitle
 	 * 
@@ -88,7 +88,7 @@ public class Room {
 	}
 
 	/**
-	 * sets room title
+	 * sets room title.
 	 *
 	 * @param String
 	 *            title
@@ -99,7 +99,7 @@ public class Room {
 	}
 
 	/**
-	 * gets room description
+	 * gets room description.
 	 *
 	 * @return ArrayList<String> roomDescription
 	 * 
@@ -109,7 +109,7 @@ public class Room {
 	}
 
 	/**
-	 * sets room description
+	 * sets room description.
 	 *
 	 * @param ArrayList<String>
 	 *            description
@@ -120,7 +120,7 @@ public class Room {
 	}
 
 	/**
-	 * gets room creature
+	 * gets room creature.
 	 *
 	 * @return Creature
 	 * 
@@ -130,7 +130,7 @@ public class Room {
 	}
 
 	/**
-	 * sets room creature
+	 * sets room creature.
 	 *
 	 * @param Creature
 	 *            c

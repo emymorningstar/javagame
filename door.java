@@ -3,14 +3,14 @@ public class Door {
 
 	private Room leadsTo = null;
 	/**
-	 *default room constructor
+	 *default room constructor.
 	 * 
 	 */
 	public Door() {
 		leadsTo = null;
 	}
 	/**
-	 *room constructor sets leads to possibilities
+	 *room constructor sets leads to possibilities.
 	 *
 	 *@param 		Room to1, Room to2,Room to3
 	 * 
@@ -30,7 +30,7 @@ public class Door {
 		}
 	}
 	/**
-	 *sets leads to for a room
+	 *sets leads to for a room.
 	 *
 	 *@param 		Room to
 	 * 
@@ -39,7 +39,7 @@ public class Door {
 		leadsTo = to;
 	}
 	/**
-	 *gets leads to for a room
+	 *gets leads to for a room.
 	 *
 	 *@returns 		Room leadsto
 	 * 

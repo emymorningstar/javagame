@@ -10,7 +10,7 @@ public class instances {
 	static boolean game = true;
 
 	/**
-	 * sets initial display string array
+	 * sets initial display string array.
 	 * 
 	 */
 	public instances() {
@@ -21,7 +21,7 @@ public class instances {
 	}
 
 	/**
-	 * Retrieves the current display string
+	 * Retrieves the current display string.
 	 * 
 	 * @return current display string array
 	 */
@@ -30,7 +30,7 @@ public class instances {
 	}
 
 	/**
-	 * sets the current display string array
+	 * sets the current display string array.
 	 * 
 	 * @param Araylist
 	 *            of strings

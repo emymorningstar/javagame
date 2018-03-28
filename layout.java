@@ -24,7 +24,7 @@ public class layout {
 	instances s = new instances();
 
 	/**
-	 * creates jframe and sets up interface
+	 * creates jframe and sets up interface.
 	 *
 	 * @see interface in a new jframe window
 	 */
@@ -71,7 +71,7 @@ public class layout {
 	}
 
 	/**
-	 * clears the previous text calls render text
+	 * clears the previous text calls render text.
 	 *
 	 * @see cleared
 	 */
@@ -84,7 +84,7 @@ public class layout {
 	}
 
 	/**
-	 * calls renderString
+	 * calls renderString.
 	 * 
 	 * @param Graphics2D
 	 *            g
@@ -95,7 +95,7 @@ public class layout {
 	}
 
 	/**
-	 * puts the strings on the screen
+	 * puts the strings on the screen.
 	 * 
 	 * @param Arraylist
 	 *            string
@@ -115,7 +115,7 @@ public class layout {
 	}
 
 	/**
-	 * clears the strings from the screen
+	 * clears the strings from the screen.
 	 * 
 	 * @param string
 	 * @see Gui cleared
