@@ -61,11 +61,11 @@ public class instances {
 		fight = t;
 	}
 	
-	public static boolean getGame(){
+	public static boolean getGame() {
 		return game;
 	}
 	
-	public static void setGame(final boolean g){
+	public static void setGame(final boolean g) {
 		game = g;
 	}
 	

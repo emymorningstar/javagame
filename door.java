@@ -20,15 +20,15 @@ public class Door
 	public Door(final Room to1, final Room to2, final Room to3)
 	{
 		Random r = new Random();
-		int n = r.nextInt(2)+1;
+		int n = r.nextInt(2) +1;
 		
-		if(n == 1){
+		if(n == 1) {
 			leadsTo = to1;
 		}
-		else if (n== 2){
+		else if (n == 2) {
 			leadsTo = to2;
 		}
-		else{
+		else {
 			leadsTo = to3;
 		}
 	}

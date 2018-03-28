@@ -149,10 +149,10 @@ public class creature {
 	public void attack(final creature c) {
 		c.setHealth(this.getHealth() - c.getAttack());
 		ArrayList<String> a = new ArrayList<String>();
-		a.add("You have " + instances.getPlayer().getHealth()+ " health.");
-		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth()+ " health.");
+		a.add("You have " + instances.getPlayer().getHealth() + " health.");
+		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth() + " health.");
 		instances.changeDisplay(a);
-		if(instances.getPlayer().getHealth() <= 0){
+		if(instances.getPlayer().getHealth() <= 0) {
 			instances.setGame(false);
 		}
 			
