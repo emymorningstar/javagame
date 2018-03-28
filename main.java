@@ -16,11 +16,13 @@ public class main {
 		creature chickMan = new creature("Chicken Man", 10, 10, 10, 10);
 		creature drBigBad = new creature("Big bad", 10, 10, 10, 10);
 		ArrayList<String> start = new ArrayList<String>();
+		start.add("A pixie stands before to you and says");
 		start.add(
-				"Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr.");
+				"\"Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr.");
 		start.add(
 				"Big Bad Before you is a path, leading through the dangers of this world. At the");
-		start.add("end, Dr. Big Bad awaits. The path leads north. ");
+		start.add("end, Dr. Big Bad awaits. If you need any help, just type help!\"");
+		start.add("A path leads north. ");
 
 		ArrayList<String> vd = new ArrayList<String>();
 		vd.add("You find yourself in a village filled with happiness. You have been resting ");
@@ -88,6 +90,7 @@ public class main {
 				"starts monologuing, but you can’t really hear him through his helmet.");
 		bigD.add("");
 
+		Room Start = new Room("Start", start);
 		Room village = new Room("village", vd);
 		Room fairyForest = new Room("Fairy Forest", ffd);
 		Room secCave = new Room("Secret Cave", secC);
@@ -99,10 +102,12 @@ public class main {
 		Room lichHouse = new Room("The lair of the Lich", lichD, lich);// Monster
 		Room farm = new Room("The farm of eternal despair", farmD, chickMan);// Monster
 		Room badLair = new Room("Dr. Big Bad's Lair", bigD,drBigBad);// Monster????
+		Door door0 = new Door(village, village, village);
 		Door door1 = new Door(fairyForest, secCave, work);
 		Door door2 = new Door(merLake, ghostHouse, meadow);
 		Door door3 = new Door(dragonCave, lichHouse, farm);
 		Door door4 = new Door(badLair, badLair, badLair);
+		Start.setDoor(door0);
 		village.setDoor(door1);
 		fairyForest.setDoor(door2);
 		secCave.setDoor(door2);
@@ -114,7 +119,7 @@ public class main {
 		lichHouse.setDoor(door4);
 		farm.setDoor(door4);
 
-		instances.setCurrentRoom(village);
+		instances.setCurrentRoom(Start);
 
 		while (true) {
 			l.render();
