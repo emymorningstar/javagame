@@ -35,7 +35,7 @@ public class instances {
 	 * @param Araylist
 	 *            of strings
 	 */
-	public static void changeDisplay(ArrayList<String> a) {
+	public static void changeDisplay(final ArrayList<String> a) {
 		display = a;
 	}
 
@@ -44,7 +44,7 @@ public class instances {
 
 	}
 
-	public static void setCurrentRoom(Room r) {
+	public static void setCurrentRoom(final Room r) {
 		currentRoom = r;
 		instances.changeDisplay(instances.getCurrentRoom().getDescription());
 	}
@@ -57,7 +57,7 @@ public class instances {
 		return fight;
 	}
 
-	public static void setfight(boolean t) {
+	public static void setfight(final boolean t) {
 		fight = t;
 	}
 	
@@ -65,7 +65,7 @@ public class instances {
 		return game;
 	}
 	
-	public static void setGame(boolean g){
+	public static void setGame(final boolean g){
 		game = g;
 	}
 	
