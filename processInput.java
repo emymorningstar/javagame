@@ -9,8 +9,8 @@ public class processInput {
 	 *            s input
 	 * 
 	 */
-	static void doInput(String s) {
-		s = s.toLowerCase();
+	static void doInput(final String input) {
+		String s = input.toLowerCase();
 		if (instances.getGame()){
 		if (s.contains("north")	&& instances.currentRoom.getTitle() != "Dr. Big Bad's Lair") {
 			if (instances.currentRoom.getTitle() != "Mermaids Lake"	|| (instances.currentRoom.getTitle() == "Mermaids Lake"	&& instances.currentRoom.getCreature().getHealth() <= 0)) {
