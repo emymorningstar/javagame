@@ -260,7 +260,7 @@ public class processInputTest {
 		
 		processInput.doInput("look armor");
 		
-		assert(instances.getDisplay().contains("As you look at the armor, something crawls out of it. Itâ€™s a ghost! The specter"));
+		assert(instances.getDisplay().contains("As you look at the armor, something crawls out of it. It’s a ghost! The specter"));
 	}
 	
 	@Test
@@ -273,7 +273,7 @@ public class processInputTest {
 		
 		processInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("The ghost diesâ€¦ somehow. You now have the armor of Sir. Spookington! Your armor goes "));
+		assert(instances.getDisplay().contains("The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes "));
 	}
 	
 	@Test
