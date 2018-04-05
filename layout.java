@@ -7,9 +7,15 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -22,7 +28,7 @@ public class layout {
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
 	instances s = new instances();
-
+	
 	/**
 	 * creates jframe and sets up interface.
 	 *
@@ -32,6 +38,7 @@ public class layout {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
 		JTextField t = new JTextField("");
+		frame.getRootPane().setDefaultButton(b);
 		t.setBounds(480, 415, 100, 40);
 		b.setBounds(580, 415, 100, 40);
 		frame.add(b);
@@ -105,6 +112,9 @@ public class layout {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, HEIGHT / 2 - 100, WIDTH, 400);
+		g.drawImage(instances.getCurrentImage(), 0, 0, canvas);
+		//System.out.println((WIDTH) + " width" + ((HEIGHT / 2 - 100) + " height"));
+		//width 700 height 150
 		g.setFont(new Font("Monospaced", Font.PLAIN, 14));
 		g.setColor(Color.WHITE);
 		for (int i = 0; i < s.size(); i++) {

@@ -117,6 +117,7 @@ public class main {
 		instances.setCurrentRoom(village);
 
 		while (true) {
+			imageChecker.checkImage();
 			l.render();
 
 			if (instances.getfight() == true) {

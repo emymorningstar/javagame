@@ -1,3 +1,4 @@
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class instances {
@@ -8,7 +9,7 @@ public class instances {
 	static creature player = new creature();
 	static boolean fight = false;
 	static boolean game = true;
-
+	static BufferedImage currentImage= null;
 	/**
 	 * sets initial display string array.
 	 * 
@@ -68,5 +69,11 @@ public class instances {
 	public static void setGame(final boolean g) {
 		game = g;
 	}
-	
+	public static BufferedImage getCurrentImage() {
+		return currentImage;
+	}
+
+	public static void setCurrentImage(final BufferedImage i) {
+		currentImage = i;
+	}
 }
