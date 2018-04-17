@@ -1,5 +1,3 @@
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 
 import org.junit.Test;
@@ -54,19 +52,18 @@ public class ProcessInputTest {
 	@Test
 	public void testCreature(){
 		Creature Bob = new Creature("Bob",10,10, 2, 2);
-		Creature tim = new Creature();
 		
-		tim.setName("tim");
-		tim.setArmor(10);
-		tim.setAttack(20);
-		tim.setHealth(1000);
-		tim.setMaxHealth(1000);
+		Bob.setName("tim");
+		Bob.setArmor(10);
+		Bob.setAttack(20);
+		Bob.setHealth(1000);
+		Bob.setMaxHealth(1000);
 		
-		assert(tim.getName() == "tim");
-		assert(tim.getArmor() == 10);
-		assert(tim.getAttack() == 20);
-		assert(tim.getHealth() == 1000);
-		assert(tim.getMaxHealth() == 1000);
+		assert(Bob.getName() == "tim");
+		assert(Bob.getArmor() == 10);
+		assert(Bob.getAttack() == 20);
+		assert(Bob.getHealth() == 1000);
+		assert(Bob.getMaxHealth() == 1000);
 		
 	}
 	
@@ -252,13 +249,13 @@ public class ProcessInputTest {
 	
 	@Test
 	public void testGhost1(){
-		Creature Bob = new Creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",10,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Ghost House", t5, Bob);
 		Instances.setCurrentRoom(test);
 		
-		ProcessInput.doInput("look armor");
+		ProcessInput.doInput("look");
 		
 		assert(Instances.getDisplay().contains("As you look at the armor, something crawls out of it. It’s a ghost! The specter"));
 	}
@@ -270,7 +267,7 @@ public class ProcessInputTest {
 		t5.add("Start description");
 		Room test = new Room("Ghost House", t5, Bob);
 		Instances.setCurrentRoom(test);
-		
+		Instances.getCurrentRoom().getCreature().setHealth(0);
 		ProcessInput.doInput("look");
 		
 		assert(Instances.getDisplay().contains("The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes "));

@@ -1,4 +1,3 @@
-import javax.swing.JFrame;
 import java.util.ArrayList;
 
 public class Main {
@@ -43,6 +42,7 @@ public class Main {
 		wd.add("You are now in a concrete building filled with cubicles. The doors behind you and too");
 		wd.add("the north are locked. You can see a cubicle with your name on it. In the back you");
 		wd.add("can see an office.");
+		wd.add("(office, talk bob, work, north)");
 
 		ArrayList<String> merd = new ArrayList<String>();
 		merd.add(

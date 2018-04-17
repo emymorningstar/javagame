@@ -37,6 +37,10 @@ public class ProcessInput {
 			/*
 			 * commands for Work room
 			 */
+			
+			/*
+			 * Checks work command
+			 */
 			else if (Instances.currentRoom.getTitle() == "Work"
 					&& (s.contains("work") || s.contains("cubicle"))) {
 				ArrayList<String> working = new ArrayList<String>();
@@ -128,7 +132,7 @@ public class ProcessInput {
 				Instances.setfight(true);
 				Instances.changeDisplay(mIsle);
 			} else if (Instances.currentRoom.getTitle() == "Mermaids Lake"
-					&& s.contains("look")
+					&& s.contains("island")
 					&& Instances.currentRoom.getCreature().getHealth() <= 0) {
 				ArrayList<String> mIsle2 = new ArrayList<String>();
 				mIsle2.add(
@@ -159,7 +163,7 @@ public class ProcessInput {
 						.setHealth(Instances.getPlayer().getHealth() - 5);
 				Instances.changeDisplay(lArm);
 			} else if (Instances.currentRoom.getTitle() == "Ghost House"
-					&& s.contains("(look)") && Instances.getCurrentRoom()
+					&& s.contains("look") && Instances.getCurrentRoom()
 							.getCreature().getHealth() <= 0) {
 				ArrayList<String> l2Arm = new ArrayList<String>();
 				l2Arm.add(
