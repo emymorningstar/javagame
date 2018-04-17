@@ -31,7 +31,7 @@ public class Main {
 		vd.add("(north)");
 		ArrayList<String> ffd = new ArrayList<String>();
 		ffd.add("You are now in the fairy forest. All around you trees are buzzing with the sound of");
-		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.î");
+		ffd.add("thousands of wings. You can see a pond, a giant glowing tree, and a fairy.‚Äù");
 		ffd.add("(talk fairy, look pond, look tree, north)");
 		ArrayList<String> secC = new ArrayList<String>();
 		secC.add(
@@ -79,7 +79,7 @@ public class Main {
 
 		ArrayList<String> farmD = new ArrayList<String>();
 		farmD.add(
-				"You find yourself on a little farm. Itís quite and piece full. An old man sits on ");
+				"You find yourself on a little farm. It‚Äôs quite and piece full. An old man sits on ");
 		farmD.add(
 				"the porch and asks you to join him for dinner. The path continues north.");
 		farmD.add("(no,yes,north)");
@@ -88,7 +88,7 @@ public class Main {
 		bigD.add(
 				"You have made it to the end of your journey. Dr. Big Bad stands in front of you. He");
 		bigD.add(
-				"starts monologuing, but you canít really hear him through his helmet.");
+				"starts monologuing, but you can‚Äôt really hear him through his helmet.");
 		bigD.add("(attack)");
 
 		Room Start = new Room("Start", start);
