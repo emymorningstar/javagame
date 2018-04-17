@@ -1,10 +1,29 @@
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+/**
+ * class handles the creatures.
+ *
+ */
 public class Creature {
+	/**
+	 * stores current creature name.
+	 */
 	private String name;
+	/**
+	 * stores current creature health.
+	 */
 	private int health;
+	/**
+	 * max health the creature can have.
+	 */
 	private int maxHealth;
+	/**
+	 * the armor level of a creature.
+	 */
 	private int armor;
+	/**
+	 * how much damage the creature can do per turn.
+	 */
 	private int attack;
 
 	/**
@@ -23,16 +42,11 @@ public class Creature {
 	 * alternative constructor.
 	 * 
 	 * 
-	 * @param String
-	 *            n Name
-	 * @param int
-	 *            h Health
-	 * @param int
-	 *            maxH maxHealth
-	 * @param int
-	 *            arm armor
-	 * @param int
-	 *            att attack
+	 * @param n Name
+	 * @param h Health
+	 * @param maxH maxHealth
+	 * @param arm armor
+	 * @param att attack
 	 */
 	public Creature(final String n, final int h, final int maxH, final int arm, final int att) {
 		name = n;
@@ -53,8 +67,7 @@ public class Creature {
 	/**
 	 * sets creature name.
 	 * 
-	 * @param String
-	 *            name
+	 * @param n name
 	 * 
 	 */
 	public void setName(final String n) {
@@ -72,8 +85,7 @@ public class Creature {
 	/**
 	 * sets creature health.
 	 * 
-	 * @param int
-	 *            health
+	 * @param h health
 	 * 
 	 */
 	public void setHealth(final int h) {
@@ -91,8 +103,7 @@ public class Creature {
 	/**
 	 * sets creature max health.
 	 * 
-	 * @param int
-	 *            h maxhealth
+	 * @param  h maxhealth
 	 * 
 	 */
 	public void setMaxHealth(final int h) {
@@ -100,6 +111,7 @@ public class Creature {
 	}
 
 	/**
+	 * gets armor level.
 	 * @return armor
 	 * 
 	 */
@@ -110,8 +122,7 @@ public class Creature {
 	/**
 	 * sets creature armor.
 	 * 
-	 * @param int
-	 *            arm armor
+	 * @param arm armor
 	 * 
 	 */
 	public void setArmor(final int arm) {
@@ -119,6 +130,8 @@ public class Creature {
 	}
 
 	/**
+	 * gets attack.
+	 * 
 	 * @return attack
 	 * 
 	 */
@@ -129,8 +142,7 @@ public class Creature {
 	/**
 	 * sets creature attack.
 	 * 
-	 * @param int
-	 *            att attack
+	 * @param att attack
 	 * 
 	 */
 	public void setAttack(final int att) {
@@ -140,25 +152,22 @@ public class Creature {
 	/**
 	 * attack damage calculation method.
 	 * 
-	 * @param Creature
-	 *            c creature
+	 * @param c creature
 	 * 
 	 */
 	public void attack(final Creature c) {
 		c.setHealth(this.getHealth() - c.getAttack());
 		ArrayList<String> a = new ArrayList<String>();
-		a.add("You have " + Instances.getPlayer().getHealth() + " health.");
-		a.add("They have " + Instances.getCurrentRoom().getCreature().getHealth() + " health.");
-		if(Instances.getCurrentRoom().getCreature().getHealth()<=0) {
-			a.add("(look)");
-		}
-		else
-		{
+		a.add("You have " + instances.getPlayer().getHealth() + " health.");
+		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth() + " health.");
+		if (instances.getCurrentRoom().getCreature().getHealth() <= 0) {
+			a.add("(look)"); 
+		} else {
 			a.add("(attack)");
 		}
-		Instances.changeDisplay(a);
-		if(Instances.getPlayer().getHealth() <= 0) {
-			Instances.setGame(false);
+		instances.changeDisplay(a);
+		if (instances.getPlayer().getHealth() <= 0) {
+			instances.setGame(false);
 		}
 			
 	}
