@@ -5,7 +5,7 @@ public class Room {
 	private Door door;
 	private String roomTitle;
 	private ArrayList<String> roomDescription;
-	private creature character;
+	private Creature character;
 
 	/**
 	 * Blank constructor.
