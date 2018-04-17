@@ -90,7 +90,7 @@ public class ProcessInput {
 				ArrayList<String> tFairy = new ArrayList<String>();
 				tFairy.add(
 						"The fairy says she lost her helmet. If you can find it, she will give it to you!");
-				tFairy.add("She’s nice like that.");
+				tFairy.add("Sheâ€™s nice like that.");
 				tFairy.add("(room)");
 				Instances.changeDisplay(tFairy);
 			} else if (Instances.currentRoom.getTitle() == "Fairy Forest"
@@ -155,7 +155,7 @@ public class ProcessInput {
 							.getCreature().getHealth() > 0) {
 				ArrayList<String> lArm = new ArrayList<String>();
 				lArm.add(
-						"As you look at the armor, something crawls out of it. It’s a ghost! The specter");
+						"As you look at the armor, something crawls out of it. Itâ€™s a ghost! The specter");
 				lArm.add("hisses at you and attacks!");
 				lArm.add("(attack)");
 				Instances.setfight(true);
@@ -167,7 +167,7 @@ public class ProcessInput {
 							.getCreature().getHealth() <= 0) {
 				ArrayList<String> l2Arm = new ArrayList<String>();
 				l2Arm.add(
-						"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
+						"The ghost diesâ€¦ somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 				l2Arm.add(
 						"up by 5, but your health goes down by 2. You see the door to the north swing open.");
 				l2Arm.add("(north)");
