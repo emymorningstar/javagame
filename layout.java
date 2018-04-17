@@ -7,26 +7,53 @@ import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.image.BufferStrategy;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class Layout {
-	// based drawing class on a prevous assignment I did -emy
-
+/**
+ * 
+ * class draws the gui.
+ *
+ */
+public class layout {
+	// based drawing class on a previous assignment I did -emy
+	/**
+	 * is the frame.
+	 *
+	 */
 	JFrame frame;
+	/**
+	 * 
+	 * canvas things are drawn to.
+	 *
+	 */
 	Canvas canvas;
+	/**
+	 * 
+	 * width of game window.
+	 *
+	 */
 	public static final int WIDTH = 700;
+	/**
+	 * 
+	 * height of game window.
+	 *
+	 */
 	public static final int HEIGHT = 500;
+	/**
+	 * 
+	 * used to add things to canvas.
+	 *
+	 */
 	BufferStrategy bufferStrategy;
+	/**
+	 * 
+	 * uses the instances to find strings and images.
+	 *
+	 */
 	Instances s = new Instances();
 	
 	/**
@@ -34,7 +61,7 @@ public class Layout {
 	 *
 	 * @see interface in a new jframe window
 	 */
-	public Layout() {
+	public layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
 		JTextField t = new JTextField("");
@@ -48,10 +75,11 @@ public class Layout {
 			@Override
 			public void actionPerformed(final ActionEvent arg0) {
 				System.out.println("click");
+				@SuppressWarnings("resource")
 				Scanner sc = new Scanner(t.getText());
 				if (sc.hasNext()) {
 					String cmd = sc.nextLine();
-					ProcessInput.doInput(cmd);
+					processInput.doInput(cmd);
 					t.setText("");
 				}
 			}
@@ -93,27 +121,26 @@ public class Layout {
 	/**
 	 * calls renderString.
 	 * 
-	 * @param Graphics2D
-	 *            g
+	 * @param g default graphics object
 	 */
 	void render(final Graphics2D g) {
-		renderString(Instances.getDisplay());
+		renderString(instances.getDisplay());
 
 	}
 
 	/**
 	 * puts the strings on the screen.
 	 * 
-	 * @param Arraylist
-	 *            string
+	 * @param s the arraylist of description strings
 	 * @see strings
 	 */
 	void renderString(final ArrayList<String> s) {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, HEIGHT / 2 - 100, WIDTH, 400);
-		g.drawImage(Instances.getCurrentImage(), 0, 0, canvas);
-		//System.out.println((WIDTH) + " width" + ((HEIGHT / 2 - 100) + " height"));
+		g.drawImage(instances.getCurrentImage(), 0, 0, canvas);
+		//System.out.println((WIDTH) + " width" + 
+		//((HEIGHT / 2 - 100) + " height"));
 		//width 700 height 150
 		g.setFont(new Font("Monospaced", Font.PLAIN, 14));
 		g.setColor(Color.WHITE);
@@ -127,7 +154,7 @@ public class Layout {
 	/**
 	 * clears the strings from the screen.
 	 * 
-	 * @param string
+	 * @param string takes in a string
 	 * @see Gui cleared
 	 */
 	void clearGui(final String string) {
