@@ -18,7 +18,7 @@ import javax.swing.JTextField;
  * class draws the gui.
  *
  */
-public class layout {
+public class Layout {
 	// based drawing class on a previous assignment I did -emy
 	/**
 	 * is the frame.
