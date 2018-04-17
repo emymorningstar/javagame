@@ -1,8 +1,6 @@
-
-
 import java.util.ArrayList;
 
-public class creature {
+public class Creature {
 	private String name;
 	private int health;
 	private int maxHealth;
@@ -13,7 +11,7 @@ public class creature {
 	 * default constructor.
 	 * 
 	 */
-	public creature() {
+	public Creature() {
 		name = "";
 		health = 10;
 		maxHealth = 10;
@@ -36,7 +34,7 @@ public class creature {
 	 * @param int
 	 *            att attack
 	 */
-	public creature(final String n, final int h, final int maxH, final int arm, final int att) {
+	public Creature(final String n, final int h, final int maxH, final int arm, final int att) {
 		name = n;
 		health = h;
 		maxHealth = maxH;
@@ -142,25 +140,25 @@ public class creature {
 	/**
 	 * attack damage calculation method.
 	 * 
-	 * @param creature
+	 * @param Creature
 	 *            c creature
 	 * 
 	 */
-	public void attack(final creature c) {
+	public void attack(final Creature c) {
 		c.setHealth(this.getHealth() - c.getAttack());
 		ArrayList<String> a = new ArrayList<String>();
-		a.add("You have " + instances.getPlayer().getHealth() + " health.");
-		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth() + " health.");
-		if(instances.getCurrentRoom().getCreature().getHealth()<=0) {
+		a.add("You have " + Instances.getPlayer().getHealth() + " health.");
+		a.add("They have " + Instances.getCurrentRoom().getCreature().getHealth() + " health.");
+		if(Instances.getCurrentRoom().getCreature().getHealth()<=0) {
 			a.add("(look)");
 		}
 		else
 		{
 			a.add("(attack)");
 		}
-		instances.changeDisplay(a);
-		if(instances.getPlayer().getHealth() <= 0) {
-			instances.setGame(false);
+		Instances.changeDisplay(a);
+		if(Instances.getPlayer().getHealth() <= 0) {
+			Instances.setGame(false);
 		}
 			
 	}

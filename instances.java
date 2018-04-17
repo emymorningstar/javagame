@@ -1,12 +1,12 @@
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class instances {
+public class Instances {
 	String previous;
 	static ArrayList<String> s = new ArrayList();
 	static ArrayList<String> display = new ArrayList();
 	static Room currentRoom = new Room();
-	static creature player = new creature();
+	static Creature player = new Creature();
 	static boolean fight = false;
 	static boolean game = true;
 	static BufferedImage currentImage= null;
@@ -14,7 +14,7 @@ public class instances {
 	 * sets initial display string array.
 	 * 
 	 */
-	public instances() {
+	public Instances() {
 		s.add("Welcome to Adventure Path! You are the great hero, on a quest to stop the evil Dr. Big Bad");
 		s.add("Before you is a path, leading through the dangers of this world. At the end, Dr. Big Bad");
 		s.add("awaits. The path leads north. ");
@@ -47,10 +47,10 @@ public class instances {
 
 	public static void setCurrentRoom(final Room r) {
 		currentRoom = r;
-		instances.changeDisplay(instances.getCurrentRoom().getDescription());
+		Instances.changeDisplay(Instances.getCurrentRoom().getDescription());
 	}
 
-	public static creature getPlayer() {
+	public static Creature getPlayer() {
 		return player;
 	}
 

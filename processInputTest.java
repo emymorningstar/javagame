@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-public class processInputTest {
+public class ProcessInputTest {
 
 	@Test
 	public void testRoomConstruct() {
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		ArrayList<String> td = new ArrayList<String>();
 		td.add("This is the test room description");
 		Room test = new Room("Test Room", td, Bob);
@@ -25,7 +25,7 @@ public class processInputTest {
 		
 		ArrayList<String> ts = new ArrayList<String>();
 		ts.add("Set description");
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		Room test = new Room("Test", td);
 		
 		Room test2 = new Room();
@@ -53,8 +53,8 @@ public class processInputTest {
 	
 	@Test
 	public void testCreature(){
-		creature Bob = new creature("Bob",10,10, 2, 2);
-		creature tim = new creature();
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
+		Creature tim = new Creature();
 		
 		tim.setName("tim");
 		tim.setArmor(10);
@@ -75,10 +75,10 @@ public class processInputTest {
 		
 		ArrayList<String> tdis = new ArrayList<String>();
 		tdis.add("Test Display");
-		instances.changeDisplay(tdis);
+		Instances.changeDisplay(tdis);
 		
 		
-		assert(instances.getDisplay() == tdis);
+		assert(Instances.getDisplay() == tdis);
 	
 		
 	}
@@ -88,23 +88,23 @@ public class processInputTest {
 		ArrayList<String> td = new ArrayList<String>();
 		td.add("Start description");
 		Room test = new Room("Test", td);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		assert(instances.getCurrentRoom().getTitle() == "Test");
+		assert(Instances.getCurrentRoom().getTitle() == "Test");
 	}
 	
 	@Test
 	public void testFight(){
-		instances.setfight(true);
+		Instances.setfight(true);
 		
-		assert(instances.getfight());
+		assert(Instances.getfight());
 	}
 	
 	@Test
 	public void testPlayer(){
-		instances.getPlayer().setHealth(20);
+		Instances.getPlayer().setHealth(20);
 		
-		assert(instances.getPlayer().getHealth() == 20);
+		assert(Instances.getPlayer().getHealth() == 20);
 	}
 	
 	@Test
@@ -121,11 +121,11 @@ public class processInputTest {
 		
 		test.setDoor(door1);
 		
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("north");
+		ProcessInput.doInput("north");
 		
-		assert(instances.getCurrentRoom().getTitle() == "Test 2");
+		assert(Instances.getCurrentRoom().getTitle() == "Test 2");
 	}
 	
 	@Test
@@ -133,11 +133,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Work", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("work");
+		ProcessInput.doInput("work");
 		
-		assert(instances.getDisplay().contains("You start to work. The day goes on, and you can feel the boredom kick in."));
+		assert(Instances.getDisplay().contains("You start to work. The day goes on, and you can feel the boredom kick in."));
 	}
 	
 	@Test
@@ -145,11 +145,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Work", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("office");
+		ProcessInput.doInput("office");
 		
-		assert(instances.getDisplay().contains("In the office you can see the manager: a giant troll with a nametage that says Bob."));
+		assert(Instances.getDisplay().contains("In the office you can see the manager: a giant troll with a nametage that says Bob."));
 	}
 	
 	@Test
@@ -157,11 +157,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Work", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("talk to bob");
+		ProcessInput.doInput("talk to bob");
 		
-		assert(instances.getDisplay().contains("Get back to work, work Monkey!"));
+		assert(Instances.getDisplay().contains("Get back to work, work Monkey!"));
 	}
 	
 	@Test
@@ -169,11 +169,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Fairy Forest", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look tree");
+		ProcessInput.doInput("look tree");
 		
-		assert(instances.getDisplay().contains("In the tree you see a glowing helmet."));
+		assert(Instances.getDisplay().contains("In the tree you see a glowing helmet."));
 	}
 	
 	@Test
@@ -181,11 +181,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Fairy Forest", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("get helmet");
+		ProcessInput.doInput("get helmet");
 		
-		assert(instances.getDisplay().contains("You got the fairy helmet! Your defense goes up by 3!"));
+		assert(Instances.getDisplay().contains("You got the fairy helmet! Your defense goes up by 3!"));
 	}
 	
 	@Test
@@ -193,11 +193,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Fairy Forest", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("talk fairy");
+		ProcessInput.doInput("talk fairy");
 		
-		assert(instances.getDisplay().contains("The fairy says she lost her helmet. If you can find it, she will give it to you!"));
+		assert(Instances.getDisplay().contains("The fairy says she lost her helmet. If you can find it, she will give it to you!"));
 	}
 	
 	@Test
@@ -205,11 +205,11 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Fairy Forest", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look pond");
+		ProcessInput.doInput("look pond");
 		
-		assert(instances.getDisplay().contains("the pond seems wet."));
+		assert(Instances.getDisplay().contains("the pond seems wet."));
 	}
 	
 	@Test
@@ -217,63 +217,63 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Secret Cave", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("get helmet");
+		ProcessInput.doInput("get helmet");
 		
-		assert(instances.getDisplay().contains("You got the helmet of +2 beating. Your defense goes up by 1, but your attack "));
+		assert(Instances.getDisplay().contains("You got the helmet of +2 beating. Your defense goes up by 1, but your attack "));
 	}
 	
 	@Test
 	public void testMer1(){
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Mermaids Lake", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("island");
+		ProcessInput.doInput("island");
 		
-		assert(instances.getDisplay().contains("you try to swim to the island, but before you can a giant monster comes out of the"));
+		assert(Instances.getDisplay().contains("you try to swim to the island, but before you can a giant monster comes out of the"));
 	}
 	
 	@Test
 	public void testMer2(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Mermaids Lake", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("island");
+		ProcessInput.doInput("island");
 		
-		assert(instances.getDisplay().contains("With the monster dead, you swim to the island and find the armor of seashells! Your"));
+		assert(Instances.getDisplay().contains("With the monster dead, you swim to the island and find the armor of seashells! Your"));
 	}
 	
 	@Test
 	public void testGhost1(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Ghost House", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look armor");
+		ProcessInput.doInput("look armor");
 		
-		assert(instances.getDisplay().contains("As you look at the armor, something crawls out of it. It’s a ghost! The specter"));
+		assert(Instances.getDisplay().contains("As you look at the armor, something crawls out of it. It’s a ghost! The specter"));
 	}
 	
 	@Test
 	public void testGhost2(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Ghost House", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look");
+		ProcessInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes "));
+		assert(Instances.getDisplay().contains("The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes "));
 	}
 	
 	@Test
@@ -281,122 +281,122 @@ public class processInputTest {
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Meadow of Frollicking", t5);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("get armor");
+		ProcessInput.doInput("get armor");
 		
-		assert(instances.getDisplay().contains("This is the armor of the noble knight. Your armor goes up by 3."));
+		assert(Instances.getDisplay().contains("This is the armor of the noble knight. Your armor goes up by 3."));
 	}
 	
 	@Test
 	public void testDragLair1(){
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The Dragon's Cave", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		instances.setfight(true);
+		Instances.setfight(true);
 		
-		processInput.doInput("look");
+		ProcessInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("The dragon wakes up! Prepare yourself!"));
+		assert(Instances.getDisplay().contains("The dragon wakes up! Prepare yourself!"));
 	}
 	
 	@Test
 	public void testDragLair2(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The Dragon's Cave", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look");
+		ProcessInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("The dragon dies, leaving the sword. The sword is the sword of dragon slaying. You"));
+		assert(Instances.getDisplay().contains("The dragon dies, leaving the sword. The sword is the sword of dragon slaying. You"));
 	}
 	
 	@Test
 	public void testLich1(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The lair of the Lich", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("open");
+		ProcessInput.doInput("open");
 		
-		assert(instances.getDisplay().contains("The skeleton jumps up, his bones rattling. He announces that he will be attacking "));
+		assert(Instances.getDisplay().contains("The skeleton jumps up, his bones rattling. He announces that he will be attacking "));
 	}
 	
 	@Test
 	public void testLich2(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The lair of the Lich", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look");
+		ProcessInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("The skeleton falls. In his chest, you find the hammer of bone crushing. +3 to attack "));
+		assert(Instances.getDisplay().contains("The skeleton falls. In his chest, you find the hammer of bone crushing. +3 to attack "));
 	}
 	
 	@Test
 	public void testFarm1(){
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The farm of eternal despair", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("yes");
+		ProcessInput.doInput("yes");
 		
-		assert(instances.getDisplay().contains("The old man treats you to dinner. You feel energized by his meal. +1 to attack and "));
+		assert(Instances.getDisplay().contains("The old man treats you to dinner. You feel energized by his meal. +1 to attack and "));
 	}
 	
 	@Test
 	public void testFarm2(){
-		creature Bob = new creature("Bob",10,10, 2, 2);
+		Creature Bob = new Creature("Bob",10,10, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The farm of eternal despair", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("no");
+		ProcessInput.doInput("no");
 		
-		assert(instances.getDisplay().contains("The man is enraged! He raises his arms and a swarm of chickens descends. They band"));
+		assert(Instances.getDisplay().contains("The man is enraged! He raises his arms and a swarm of chickens descends. They band"));
 	}
 	
 	@Test
 	public void testFarm3(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("The farm of eternal despair", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("look");
+		ProcessInput.doInput("look");
 		
-		assert(instances.getDisplay().contains("the chicken swarm disperses and the old man runs into his house, locking his door. "));
+		assert(Instances.getDisplay().contains("the chicken swarm disperses and the old man runs into his house, locking his door. "));
 	}
 	
 	@Test
 	public void testBadLair1(){
-		creature Bob = new creature("Bob",0,0, 2, 2);
+		Creature Bob = new Creature("Bob",0,0, 2, 2);
 		ArrayList<String> t5 = new ArrayList<String>();
 		t5.add("Start description");
 		Room test = new Room("Dr. Big Bad's Lair", t5, Bob);
-		instances.setCurrentRoom(test);
+		Instances.setCurrentRoom(test);
 		
-		processInput.doInput("");
-		assert(instances.getDisplay().contains("Dr. Big Bad falls before you. You hear birds start to sing and the sky turns a "));
+		ProcessInput.doInput("");
+		assert(Instances.getDisplay().contains("Dr. Big Bad falls before you. You hear birds start to sing and the sky turns a "));
 	}
 	
 	@Test
 	public void testError(){
-		processInput.doInput("hi");
+		ProcessInput.doInput("hi");
 		
-		assert(instances.getDisplay().contains("I'm sorry. That's not a valid input."));
+		assert(Instances.getDisplay().contains("I'm sorry. That's not a valid input."));
 	}
 }

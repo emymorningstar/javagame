@@ -19,7 +19,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
-public class layout {
+public class Layout {
 	// based drawing class on a prevous assignment I did -emy
 
 	JFrame frame;
@@ -27,14 +27,14 @@ public class layout {
 	public static final int WIDTH = 700;
 	public static final int HEIGHT = 500;
 	BufferStrategy bufferStrategy;
-	instances s = new instances();
+	Instances s = new Instances();
 	
 	/**
 	 * creates jframe and sets up interface.
 	 *
 	 * @see interface in a new jframe window
 	 */
-	public layout() {
+	public Layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
 		JTextField t = new JTextField("");
@@ -51,7 +51,7 @@ public class layout {
 				Scanner sc = new Scanner(t.getText());
 				if (sc.hasNext()) {
 					String cmd = sc.nextLine();
-					processInput.doInput(cmd);
+					ProcessInput.doInput(cmd);
 					t.setText("");
 				}
 			}
@@ -97,7 +97,7 @@ public class layout {
 	 *            g
 	 */
 	void render(final Graphics2D g) {
-		renderString(instances.getDisplay());
+		renderString(Instances.getDisplay());
 
 	}
 
@@ -112,7 +112,7 @@ public class layout {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, HEIGHT / 2 - 100, WIDTH, 400);
-		g.drawImage(instances.getCurrentImage(), 0, 0, canvas);
+		g.drawImage(Instances.getCurrentImage(), 0, 0, canvas);
 		//System.out.println((WIDTH) + " width" + ((HEIGHT / 2 - 100) + " height"));
 		//width 700 height 150
 		g.setFont(new Font("Monospaced", Font.PLAIN, 14));

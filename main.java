@@ -1,20 +1,20 @@
 import javax.swing.JFrame;
 import java.util.ArrayList;
 
-public class main {
+public class Main {
 	/**
 	 * declares all the rooms and runs the gameloop. as well as combat loop.
 	 * 
 	 */
 	public static void main(final String[] args) {
-		layout l = new layout();
-		creature Bob = new creature("Bob", 10, 10, 2, 2);
-		creature cMonster = new creature("Lake Monster", 10, 10, 5, 5);
-		creature ghost = new creature("Ghost", 15, 15, 3, 4);
-		creature dragon = new creature("Dragon", 15, 15, 15, 3);
-		creature lich = new creature("Lich", 6, 6, 10, 8);
-		creature chickMan = new creature("Chicken Man", 10, 10, 10, 10);
-		creature drBigBad = new creature("Big bad", 10, 10, 10, 10);
+		Layout l = new Layout();
+		Creature Bob = new Creature("Bob", 10, 10, 2, 2);
+		Creature cMonster = new Creature("Lake Monster", 10, 10, 5, 5);
+		Creature ghost = new Creature("Ghost", 15, 15, 3, 4);
+		Creature dragon = new Creature("Dragon", 15, 15, 15, 3);
+		Creature lich = new Creature("Lich", 6, 6, 10, 8);
+		Creature chickMan = new Creature("Chicken Man", 10, 10, 10, 10);
+		Creature drBigBad = new Creature("Big bad", 10, 10, 10, 10);
 		ArrayList<String> start = new ArrayList<String>();
 		start.add("A pixie stands before to you and says");
 		start.add(
@@ -120,21 +120,21 @@ public class main {
 		lichHouse.setDoor(door4);
 		farm.setDoor(door4);
 
-		instances.setCurrentRoom(Start);
+		Instances.setCurrentRoom(Start);
 
 		while (true) {
-			imageChecker.checkImage();
+			ImageChecker.checkImage();
 			l.render();
 
-			if (instances.getfight() == true) {
+			if (Instances.getfight() == true) {
 				System.out.println("start fight");
-				while (instances.getCurrentRoom().getCreature()
+				while (Instances.getCurrentRoom().getCreature()
 						.getHealth() > 0) {
 					l.render();
 
 				}
 				System.out.println("end fight");
-				instances.setfight(false);
+				Instances.setfight(false);
 			}
 			try {
 				Thread.sleep(10);
