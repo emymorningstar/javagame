@@ -1,10 +1,24 @@
 import java.util.ArrayList;
-
+/**
+ * class to make and manage rooms.
+ */
 public class Room {
 	// Member variables
+	/**
+	 * door. 
+	 */
 	private Door door;
+	/**
+	 * room title.
+	 */
 	private String roomTitle;
+	/**
+	 * room discription for display.
+	 */
 	private ArrayList<String> roomDescription;
+	/**
+	 * creature to include in room.
+	 */
 	private Creature character;
 
 	/**
@@ -21,10 +35,8 @@ public class Room {
 	/**
 	 * partial constructor.
 	 * 
-	 * @param String
-	 *            title
-	 * @param ArrayList<String>
-	 *            discription
+	 * @param title
+	 * @param discription
 	 */
 	public Room(final String title, final ArrayList<String> d) {
 		// Assign title
@@ -42,14 +54,14 @@ public class Room {
 	/**
 	 * full constructor.
 	 * 
-	 * @param String title
+	 * @param title the room title
 	 *            
-	 * @param ArrayList<String> description
+	 * @param description room description
 	 *           
-	 * @param creature c creature
+	 * @param  c Creature
 	 *            
 	 */
-	public Room(final String title, final ArrayList<String> description, final creature c) {
+	public Room(final String title, final ArrayList<String> description, final Creature c) {
 		roomTitle = title;
 		roomDescription = description;
 		door = new Door();
@@ -59,8 +71,7 @@ public class Room {
 	/**
 	 * sets door to exit the room.
 	 *
-	 * @param Door
-	 *            exit
+	 * @param exit A Door that exits the room
 	 * 
 	 */
 	public void setDoor(final Door exit) {
@@ -90,8 +101,7 @@ public class Room {
 	/**
 	 * sets room title.
 	 *
-	 * @param String
-	 *            title
+	 * @param title the name of the room used for checking input
 	 * 
 	 */
 	public void setTitle(final String title) {
@@ -111,8 +121,7 @@ public class Room {
 	/**
 	 * sets room description.
 	 *
-	 * @param ArrayList<String>
-	 *            description
+	 * @param description ArrayList<String> has the description of the room
 	 * 
 	 */
 	public void setDescription(final ArrayList<String> description) {
@@ -125,18 +134,17 @@ public class Room {
 	 * @return Creature
 	 * 
 	 */
-	public creature getCreature() {
+	public Creature getCreature() {
 		return character;
 	}
 
 	/**
 	 * sets room creature.
 	 *
-	 * @param Creature
-	 *            c
+	 * @param c creature
 	 * 
 	 */
-	public void setCreature(final creature c) {
+	public void setCreature(final Creature c) {
 		character = c;
 	}
 
