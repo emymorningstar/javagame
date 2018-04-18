@@ -1,3 +1,4 @@
+package adventurePath;
 import java.util.ArrayList;
 
 import org.junit.Test;

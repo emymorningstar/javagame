@@ -1,3 +1,4 @@
+package adventurePath;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,13 +25,13 @@ public class Layout {
 	 * is the frame.
 	 *
 	 */
-	JFrame frame;
+	private JFrame frame;
 	/**
 	 * 
 	 * canvas things are drawn to.
 	 *
 	 */
-	Canvas canvas;
+	private Canvas canvas;
 	/**
 	 * 
 	 * width of game window.
@@ -48,20 +49,20 @@ public class Layout {
 	 * used to add things to canvas.
 	 *
 	 */
-	BufferStrategy bufferStrategy;
+	private BufferStrategy bufferStrategy;
 	/**
 	 * 
 	 * uses the instances to find strings and images.
 	 *
 	 */
-	Instances s = new Instances();
+	private Instances s = new Instances();
 	
 	/**
 	 * creates jframe and sets up interface.
 	 *
 	 * @see interface in a new jframe window
 	 */
-	public layout() {
+	public Layout() {
 		frame = new JFrame("Adventure Path: A Trail of Adventure");
 		JButton b = new JButton("submit");
 		JTextField t = new JTextField("");
@@ -79,7 +80,7 @@ public class Layout {
 				Scanner sc = new Scanner(t.getText());
 				if (sc.hasNext()) {
 					String cmd = sc.nextLine();
-					processInput.doInput(cmd);
+					ProcessInput.doInput(cmd);
 					t.setText("");
 				}
 			}
@@ -124,7 +125,7 @@ public class Layout {
 	 * @param g default graphics object
 	 */
 	void render(final Graphics2D g) {
-		renderString(instances.getDisplay());
+		renderString(Instances.getDisplay());
 
 	}
 
@@ -138,7 +139,7 @@ public class Layout {
 		Graphics2D g = (Graphics2D) bufferStrategy.getDrawGraphics();
 		g.setColor(Color.DARK_GRAY);
 		g.fillRect(0, HEIGHT / 2 - 100, WIDTH, 400);
-		g.drawImage(instances.getCurrentImage(), 0, 0, canvas);
+		g.drawImage(Instances.getCurrentImage(), 0, 0, canvas);
 		//System.out.println((WIDTH) + " width" + 
 		//((HEIGHT / 2 - 100) + " height"));
 		//width 700 height 150

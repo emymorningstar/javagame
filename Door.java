@@ -1,3 +1,4 @@
+package adventurePath;
 import java.util.Random;
 /**
  *Door class, handles traveling between rooms.

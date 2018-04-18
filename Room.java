@@ -1,3 +1,4 @@
+package adventurePath;
 import java.util.ArrayList;
 /**
  * class to make and manage rooms.
@@ -35,8 +36,8 @@ public class Room {
 	/**
 	 * partial constructor.
 	 * 
-	 * @param title
-	 * @param discription
+	 * @param title 
+	 * @param d 
 	 */
 	public Room(final String title, final ArrayList<String> d) {
 		// Assign title

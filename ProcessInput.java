@@ -1,38 +1,40 @@
+package adventurePath;
 import java.util.ArrayList;
-
+/**
+ * handles input.
+ */
 public class ProcessInput {
 	/**
 	 * checks input and changes the current display string. checks for valid
 	 * input.
 	 * 
-	 * @param String
-	 *            s input
+	 * @param  s input String
 	 * 
 	 */
 	static void doInput(String s) {
 		s = s.toLowerCase();
 		if (Instances.getGame()) {
-			if (s.contains("north") && Instances.currentRoom
+			if (s.contains("north") && Instances.getCurrentRoom()
 					.getTitle() != "Dr. Big Bad's Lair") {
-				if (Instances.currentRoom.getTitle() != "Mermaids Lake"
-						|| (Instances.currentRoom.getTitle() == "Mermaids Lake"
-								&& Instances.currentRoom.getCreature()
+				if (Instances.getCurrentRoom().getTitle() != "Mermaids Lake"
+						|| (Instances.getCurrentRoom().getTitle() == "Mermaids Lake"
+								&& Instances.getCurrentRoom().getCreature()
 										.getHealth() <= 0)) {
-					if (Instances.currentRoom.getTitle() != "Work"
-							|| (Instances.currentRoom.getTitle() == "Work"
-									&& Instances.currentRoom.getCreature()
+					if (Instances.getCurrentRoom().getTitle() != "Work"
+							|| (Instances.getCurrentRoom().getTitle() == "Work"
+									&& Instances.getCurrentRoom().getCreature()
 											.getHealth() <= 0)) {
-						if (Instances.currentRoom.getTitle() != "Ghost House"
-								|| (Instances.currentRoom
+						if (Instances.getCurrentRoom().getTitle() != "Ghost House"
+								|| (Instances.getCurrentRoom()
 										.getTitle() == "Ghost House"
-										&& Instances.currentRoom.getCreature()
+										&& Instances.getCurrentRoom().getCreature()
 												.getHealth() <= 0)) {
 							Door d = Instances.getCurrentRoom().getDoors();
 							Instances.setCurrentRoom(d.getLeadsTo());
 						}
 					}
 				}
-			}
+			
 
 			/*
 			 * commands for Work room
@@ -41,7 +43,7 @@ public class ProcessInput {
 			/*
 			 * Checks work command
 			 */
-			else if (Instances.currentRoom.getTitle() == "Work"
+			} else if (Instances.getCurrentRoom().getTitle() == "Work"
 					&& (s.contains("work") || s.contains("cubicle"))) {
 				ArrayList<String> working = new ArrayList<String>();
 				working.add(
@@ -49,7 +51,7 @@ public class ProcessInput {
 				working.add("You gain 5 work dollars.");
 
 				Instances.changeDisplay(working);
-			} else if (Instances.currentRoom.getTitle() == "Work"
+			} else if (Instances.getCurrentRoom().getTitle() == "Work"
 					&& s.contains("office")) {
 				ArrayList<String> office = new ArrayList<String>();
 				office.add(
@@ -57,7 +59,7 @@ public class ProcessInput {
 				office.add(
 						"Bob gives you a stern look and tells you to get back to work.");
 				Instances.changeDisplay(office);
-			} else if (Instances.currentRoom.getTitle() == "Work"
+			} else if (Instances.getCurrentRoom().getTitle() == "Work"
 					&& (s.contains("talk bob") || s.contains("talk to bob"))) {
 				ArrayList<String> tBob = new ArrayList<String>();
 				tBob.add("Get back to work, work Monkey!");
@@ -65,18 +67,18 @@ public class ProcessInput {
 				Instances.setfight(true);
 
 				Instances.changeDisplay(tBob);
-			}
+			
 
 			/*
 			 * commands for Fairy Forest
 			 */
-			else if (Instances.currentRoom.getTitle() == "Fairy Forest"
+			} else if (Instances.getCurrentRoom().getTitle() == "Fairy Forest"
 					&& s.contains("look tree")) {
 				ArrayList<String> lTree = new ArrayList<String>();
 				lTree.add("In the tree you see a glowing helmet.");
 				lTree.add("(get helmet)");
 				Instances.changeDisplay(lTree);
-			} else if (Instances.currentRoom.getTitle() == "Fairy Forest"
+			} else if (Instances.getCurrentRoom().getTitle() == "Fairy Forest"
 					&& s.contains("get helmet")) {
 				ArrayList<String> gfHelm = new ArrayList<String>();
 				gfHelm.add(
@@ -85,7 +87,7 @@ public class ProcessInput {
 				Instances.changeDisplay(gfHelm);
 				Instances.getPlayer()
 						.setArmor(3 + Instances.getPlayer().getArmor());
-			} else if (Instances.currentRoom.getTitle() == "Fairy Forest"
+			} else if (Instances.getCurrentRoom().getTitle() == "Fairy Forest"
 					&& s.contains("talk fairy")) {
 				ArrayList<String> tFairy = new ArrayList<String>();
 				tFairy.add(
@@ -93,18 +95,18 @@ public class ProcessInput {
 				tFairy.add("She’s nice like that.");
 				tFairy.add("(room)");
 				Instances.changeDisplay(tFairy);
-			} else if (Instances.currentRoom.getTitle() == "Fairy Forest"
+			} else if (Instances.getCurrentRoom().getTitle() == "Fairy Forest"
 					&& s.contains("look pond")) {
 				ArrayList<String> lpond = new ArrayList<String>();
 				lpond.add("the pond seems wet.");
 				lpond.add("(room)");
 				Instances.changeDisplay(lpond);
-			}
+			
 
 			/*
 			 * commands for The Secret Cave
 			 */
-			else if (Instances.currentRoom.getTitle() == "Secret Cave"
+			} else if (Instances.getCurrentRoom().getTitle() == "Secret Cave"
 					&& s.contains("get helmet")) {
 				ArrayList<String> gsHelm = new ArrayList<String>();
 				gsHelm.add(
@@ -116,14 +118,14 @@ public class ProcessInput {
 						.setArmor(1 + Instances.getPlayer().getArmor());
 				Instances.getPlayer()
 						.setAttack(2 + Instances.getPlayer().getAttack());
-			}
+			
 
 			/*
 			 * commands for Mermaid Lake
 			 */
-			else if (Instances.currentRoom.getTitle() == "Mermaids Lake"
+			} else if (Instances.getCurrentRoom().getTitle() == "Mermaids Lake"
 					&& s.contains("island")
-					&& Instances.currentRoom.getCreature().getHealth() > 0) {
+					&& Instances.getCurrentRoom().getCreature().getHealth() > 0) {
 				ArrayList<String> mIsle = new ArrayList<String>();
 				mIsle.add(
 						"you try to swim to the island, but before you can a giant monster comes out of the");
@@ -131,9 +133,9 @@ public class ProcessInput {
 				mIsle.add("(attack)");
 				Instances.setfight(true);
 				Instances.changeDisplay(mIsle);
-			} else if (Instances.currentRoom.getTitle() == "Mermaids Lake"
+			} else if (Instances.getCurrentRoom().getTitle() == "Mermaids Lake"
 					&& s.contains("island")
-					&& Instances.currentRoom.getCreature().getHealth() <= 0) {
+					&& Instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 				ArrayList<String> mIsle2 = new ArrayList<String>();
 				mIsle2.add(
 						"With the monster dead, you swim to the island and find the armor of seashells! Your");
@@ -146,11 +148,11 @@ public class ProcessInput {
 						.setHealth(2 + Instances.getPlayer().getHealth());
 				Instances.getPlayer()
 						.setArmor(2 + Instances.getPlayer().getArmor());
-			}
+			
 			/*
 			 * commands for Ghost House
 			 */
-			else if (Instances.currentRoom.getTitle() == "Ghost House"
+			} else if (Instances.getCurrentRoom().getTitle() == "Ghost House"
 					&& s.contains("look") && Instances.getCurrentRoom()
 							.getCreature().getHealth() > 0) {
 				ArrayList<String> lArm = new ArrayList<String>();
@@ -162,12 +164,12 @@ public class ProcessInput {
 				Instances.getPlayer()
 						.setHealth(Instances.getPlayer().getHealth() - 5);
 				Instances.changeDisplay(lArm);
-			} else if (Instances.currentRoom.getTitle() == "Ghost House"
+			} else if (Instances.getCurrentRoom().getTitle() == "Ghost House"
 					&& s.contains("look") && Instances.getCurrentRoom()
 							.getCreature().getHealth() <= 0) {
 				ArrayList<String> l2Arm = new ArrayList<String>();
 				l2Arm.add(
-						"The ghost dies… somehow. You now have the armor of Sir. Spookington! Your armor goes ");
+						"The ghost dies somehow. You now have the armor of Sir. Spookington! Your armor goes ");
 				l2Arm.add(
 						"up by 5, but your health goes down by 2. You see the door to the north swing open.");
 				l2Arm.add("(north)");
@@ -175,17 +177,18 @@ public class ProcessInput {
 				Instances.getPlayer()
 						.setArmor(5 + Instances.getPlayer().getArmor());
 				Instances.getPlayer()
-						.setHealth(Instances.getPlayer().getHealth() - 2);// should
+						.setHealth(Instances.getPlayer().getHealth() - 2); // should
 																			// this
 																			// be
 																			// max
 																			// health?
 
-			}
+			
 			/*
 			 * commands for meadow
 			 */
-			else if (Instances.currentRoom.getTitle() == "Meadow of Frollicking"
+			} else if (Instances.getCurrentRoom().getTitle() 
+					== "Meadow of Frollicking" 
 					&& s.contains("get armor")) {
 				ArrayList<String> gmArm = new ArrayList<String>();
 				gmArm.add(
@@ -195,22 +198,22 @@ public class ProcessInput {
 						.setArmor(3 + Instances.getPlayer().getArmor());
 
 				Instances.changeDisplay(gmArm);
-			}
+			
 			/*
 			 * commands for dragons lair
 			 */
-			else if (Instances.currentRoom.getTitle() == "The Dragon's Cave"
+			} else if (Instances.getCurrentRoom().getTitle() == "The Dragon's Cave"
 					&& s.contains("look")
-					&& Instances.currentRoom.getCreature().getHealth() > 0) {
+					&& Instances.getCurrentRoom().getCreature().getHealth() > 0) {
 				ArrayList<String> aDrag = new ArrayList<String>();
 				aDrag.add("The dragon wakes up! Prepare yourself!");
 				aDrag.add("(attack)");
 				Instances.setfight(true);
 
 				Instances.changeDisplay(aDrag);
-			} else if (Instances.currentRoom.getTitle() == "The Dragon's Cave"
+			} else if (Instances.getCurrentRoom().getTitle() == "The Dragon's Cave"
 					&& s.contains("look")
-					&& Instances.currentRoom.getCreature().getHealth() <= 0) {
+					&& Instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 				ArrayList<String> lDrag = new ArrayList<String>();
 				lDrag.add(
 						"The dragon dies, leaving the sword. The sword is the sword of dragon slaying. You");
@@ -224,13 +227,13 @@ public class ProcessInput {
 						.setHealth(Instances.getPlayer().getHealth() + 2);
 				Instances.getPlayer()
 						.setMaxHealth(Instances.getPlayer().getMaxHealth() + 2);
-			}
+			
 			/*
 			 * commands for Lich room
 			 */
-			else if (Instances.currentRoom.getTitle() == "The lair of the Lich"
+			} else if (Instances.getCurrentRoom().getTitle() == "The lair of the Lich"
 					&& s.contains("look")
-					&& Instances.currentRoom.getCreature().getHealth() <= 0) {
+					&& Instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 				ArrayList<String> lLich = new ArrayList<String>();
 				lLich.add(
 						"The skeleton falls. In his chest, you find the hammer of bone crushing. +3 to attack ");
@@ -244,7 +247,7 @@ public class ProcessInput {
 						.setHealth(Instances.getPlayer().getHealth() + 3);
 				Instances.getPlayer()
 						.setMaxHealth(Instances.getPlayer().getMaxHealth() + 3);
-			} else if (Instances.currentRoom
+			} else if (Instances.getCurrentRoom()
 					.getTitle() == "The lair of the Lich"
 					&& s.contains("open")) {
 				ArrayList<String> cLich = new ArrayList<String>();
@@ -255,11 +258,11 @@ public class ProcessInput {
 				Instances.setfight(true);
 
 				Instances.changeDisplay(cLich);
-			}
+			
 			/*
 			 * commands for Farm
 			 */
-			else if (Instances.currentRoom
+			} else if (Instances.getCurrentRoom()
 					.getTitle() == "The farm of eternal despair"
 					&& (s.contains("no") || s.contains("refuse"))) {
 				ArrayList<String> noF = new ArrayList<String>();
@@ -271,10 +274,10 @@ public class ProcessInput {
 				Instances.setfight(true);
 
 				Creature chickMan = new Creature("Chicken Man", 10, 10, 10, 10);
-				Instances.currentRoom.setCreature(chickMan);
-			}
+				Instances.getCurrentRoom().setCreature(chickMan);
+			
 
-			else if (Instances.currentRoom
+			} else if (Instances.getCurrentRoom()
 					.getTitle() == "The farm of eternal despair"
 					&& (s.contains("yes") || s.contains("accept"))) {
 				ArrayList<String> yesF = new ArrayList<String>();
@@ -289,11 +292,11 @@ public class ProcessInput {
 						.setHealth(Instances.getPlayer().getHealth() + 1);
 				Instances.getPlayer()
 						.setMaxHealth(Instances.getPlayer().getMaxHealth() + 1);
-			}
+			
 
-			else if (Instances.currentRoom
+			} else if (Instances.getCurrentRoom()
 					.getTitle() == "The farm of eternal despair"
-					&& (s.contains("look") && Instances.currentRoom
+					&& (s.contains("look") && Instances.getCurrentRoom()
 							.getCreature().getHealth() <= 0)) {
 				ArrayList<String> chickDie = new ArrayList<String>();
 				chickDie.add(
@@ -304,23 +307,23 @@ public class ProcessInput {
 				Instances.getPlayer()
 						.setAttack(7 + Instances.getPlayer().getAttack());
 				Instances.changeDisplay(chickDie);
-			}
+			
 
-			else if (Instances.currentRoom.getTitle() == "Dr. Big Bad's Lair"
-					&& Instances.currentRoom.getCreature().getHealth() <= 0) {
+			} else if (Instances.getCurrentRoom().getTitle() == "Dr. Big Bad's Lair"
+					&& Instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 				ArrayList<String> end = new ArrayList<String>();
 				end.add("Dr. Big Bad falls before you. You hear birds start to sing and the sky turns a ");
 				end.add("beautiful blue. A tear comes to your eye as you realize that your journey is now ");
 				end.add("over. Thanks for playing!");
 				Instances.changeDisplay(end);
-			}
+			
 
-			else if (Instances.currentRoom.getTitle() == "Dr. Big Bad's Lair"
-					&& s.contains("attack") && Instances.getfight() == false) {
+			} else if (Instances.getCurrentRoom().getTitle() == "Dr. Big Bad's Lair"
+					&& s.contains("attack") && !Instances.getfight()) {
 				Instances.setfight(true);
-			}
+			
 
-			else if (Instances.getfight() == true && s.contains("attack")) {
+			} else if (Instances.getfight() && s.contains("attack")) {
 				Instances.getPlayer()
 						.attack(Instances.getCurrentRoom().getCreature());
 				if (Instances.getCurrentRoom().getCreature().getHealth() > 0) {
@@ -328,10 +331,10 @@ public class ProcessInput {
 							.attack(Instances.getPlayer());
 				}
 			} else if (s.contains("room")) {
-				Instances.changeDisplay(Instances.currentRoom.getDescription());
-			}
+				Instances.changeDisplay(Instances.getCurrentRoom().getDescription());
+			
 
-			else if (s.contains("stats")) {
+			} else if (s.contains("stats")) {
 				ArrayList<String> health = new ArrayList<String>();
 				health.add(
 						"Player Health:" + Instances.getPlayer().getHealth());
@@ -340,9 +343,9 @@ public class ProcessInput {
 				health.add("Player Armor:" + Instances.getPlayer().getArmor());
 
 				Instances.changeDisplay(health);
-			}
+			
 
-			else if (s.contains("help")) {
+			} else if (s.contains("help")) {
 				ArrayList<String> help = new ArrayList<String>();
 				help.add(
 						"Adventure path is a game about collecting items in a fantasy world in order to ");
@@ -356,9 +359,9 @@ public class ProcessInput {
 						"Type stats to display your stats, and room to show the room description.");
 
 				Instances.changeDisplay(help);
-			}
+			
 
-			else {
+			} else {
 				ArrayList<String> error = new ArrayList<String>();
 				error.add("I'm sorry. That's not a valid input.");
 				Instances.changeDisplay(error);

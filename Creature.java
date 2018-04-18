@@ -1,4 +1,4 @@
-
+package adventurePath;
 import java.util.ArrayList;
 /**
  * class handles the creatures.
@@ -158,16 +158,16 @@ public class Creature {
 	public void attack(final Creature c) {
 		c.setHealth(this.getHealth() - c.getAttack());
 		ArrayList<String> a = new ArrayList<String>();
-		a.add("You have " + instances.getPlayer().getHealth() + " health.");
-		a.add("They have " + instances.getCurrentRoom().getCreature().getHealth() + " health.");
-		if (instances.getCurrentRoom().getCreature().getHealth() <= 0) {
+		a.add("You have " + Instances.getPlayer().getHealth() + " health.");
+		a.add("They have " + Instances.getCurrentRoom().getCreature().getHealth() + " health.");
+		if (Instances.getCurrentRoom().getCreature().getHealth() <= 0) {
 			a.add("(look)"); 
 		} else {
 			a.add("(attack)");
 		}
-		instances.changeDisplay(a);
-		if (instances.getPlayer().getHealth() <= 0) {
-			instances.setGame(false);
+		Instances.changeDisplay(a);
+		if (Instances.getPlayer().getHealth() <= 0) {
+			Instances.setGame(false);
 		}
 			
 	}
