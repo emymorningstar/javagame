@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"adventurePath","l":"Main"}]
+typeSearchIndex = [{"p":"<Unnamed>","l":"Creature"},{"p":"<Unnamed>","l":"Door"},{"p":"<Unnamed>","l":"ImageChecker"},{"p":"<Unnamed>","l":"Instances"},{"p":"<Unnamed>","l":"Layout"},{"p":"<Unnamed>","l":"Main"},{"p":"<Unnamed>","l":"ProcessInput"},{"p":"<Unnamed>","l":"Room"}]

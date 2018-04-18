@@ -48,7 +48,7 @@ public class Door {
 	/**
 	 *gets leads to for a room.
 	 *
-	 *@return 		Room leadsto
+	 *@return 	leadsto
 	 * 
 	 */
 	public Room getLeadsTo() {
