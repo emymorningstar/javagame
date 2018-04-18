@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"adventurePath","l":"ProcessInput"}]
+typeSearchIndex = [{"p":"adventurePath","l":"Main"}]

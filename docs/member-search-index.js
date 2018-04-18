@@ -1,1 +1,1 @@
-memberSearchIndex = [{"p":"adventurePath","c":"ProcessInput","l":"doInput(String)","url":"doInput-java.lang.String-"},{"p":"adventurePath","c":"ProcessInput","l":"ProcessInput()"}]
+memberSearchIndex = [{"p":"adventurePath","c":"Main","l":"main(String[])","url":"main-java.lang.String:A-"},{"p":"adventurePath","c":"Main","l":"Main()"}]

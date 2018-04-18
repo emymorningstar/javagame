@@ -9,7 +9,7 @@ public class Main {
 	/**
 	 * declares all the rooms and runs the gameloop. as well as combat loop.
 	 *  
-	 * @param args 
+	 * @param args the args for the main method
 	 */
 	public static void main(final String[] args) {
 		Layout l = new Layout();
